@@ -1,0 +1,15 @@
+# Netlify Redirects Configuration
+
+# Force HTTPS
+http://rosehillenergy.netlify.app/* https://rosehillenergy.netlify.app/:splat 301!
+
+# Clean URLs - remove .html extension
+/home /index.html 200
+/about /about-us.html 200
+/solutions /solutions.html 200
+/contact /contact-us.html 200
+/innovation /innovation.html 200
+/manufacturing /manufacturing.html 200
+
+# Fallback for 404 errors
+/* /index.html 404

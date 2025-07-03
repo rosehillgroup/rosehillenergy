@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosehill Energy - Advanced Polymer Solutions for the Energy Sector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+        }
+
+        .nav-menu a.active {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            background: #ff6b35;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .contact-btn:hover {
+            background: #e55a2b !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.85), rgba(45, 74, 113, 0.85)), url('Oil_Pipeline.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,107,53,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            background-size: 50px 50px;
+            background-position: center;
+            background-repeat: repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(26, 54, 93, 0.4) 0%, 
+                rgba(45, 74, 113, 0.3) 50%,
+                rgba(26, 54, 93, 0.4) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ff6b35;
+            transform: translateY(-3px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .solutions-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .solution-row {
+            margin-bottom: 80px;
+        }
+
+        .solution-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .solutions-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .solution-row:nth-child(even) .solution-content {
+            order: 2;
+        }
+
+        .solution-row:nth-child(even) .solution-visual {
+            order: 1;
+        }
+
+        .solution-content h3 {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .solution-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .solution-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .solution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .solution-visual {
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-visual.liquid-applied {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+        }
+
+        .solution-visual.subsea-infrastructure {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+        }
+
+        .solution-placeholder {
+            font-size: 6rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        /* Products Section */
+        .products-section {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .product-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: #6c757d;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .product-specs {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .product-specs span {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 53, 0.2);
+            border: 3px solid #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .benefit-title {
+            font-family: 'Overpass', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-description {
+            opacity: 0.9;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #ff6b35;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-white {
+            background: white;
+            color: #ff6b35;
+            padding: 18px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: #ff6b35;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a365d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-nav-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+
+        .mobile-nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-menu a:hover {
+            color: #ff6b35;
+        }
+
+        .mobile-nav-menu a.active {
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .mobile-nav-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav-menu .contact-btn {
+            background: #ff6b35;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-menu {
+                gap: 20px;
+            }
+            
+            .nav-menu a {
+                padding: 6px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .contact-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-menu a {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .solutions-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 30px;
+            }
+
+            .solution-row:nth-child(even) .solution-content {
+                order: 1;
+            }
+
+            .solution-row:nth-child(even) .solution-visual {
+                order: 2;
+            }
+
+            .solution-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .solution-visual {
+                height: 300px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="rosehill_energy_logo.png" alt="Rosehill Energy">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="innovation.html">Innovation & R&D</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-nav-menu" id="mobile-menu">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="innovation.html">Innovation & R&D</a>
+                    <a href="manufacturing.html">Manufacturing</a>
+                    <a href="about-us.html">About Us</a>
+                    <a href="contact-us.html" class="contact-btn">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Advanced Polymer Solutions for the Energy Sector</h1>
+            <p>Over two decades of pioneering innovation in polymer science, engineering bespoke systems that perform in the toughest marine and onshore environments with superior hot-wet performance and exceptional durability.</p>
+            <div class="hero-buttons">
+                <a href="#solutions" class="btn-primary">Explore Our Solutions</a>
+                <a href="contact-us.html" class="btn-secondary">Speak to an Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section" id="solutions">
+        <div class="solutions-container">
+            <h2 class="section-title">Advanced Polymer Solutions</h2>
+            <p class="section-subtitle">Engineered polymer systems designed to excel in demanding energy sector applications</p>
+            
+            <!-- Liquid-Applied Solutions -->
+            <div class="solution-row">
+                <div class="solutions-inner">
+                    <div class="solution-content">
+                        <h3>Liquid-Applied Solutions</h3>
+                        <p>Advanced polyurethanes for cable protection, static bend stiffeners, thermal insulation, and custom mouldings engineered for marine environments. Our liquid-applied systems provide seamless protection with excellent adhesion and long-term durability.</p>
+                        <ul class="solution-features">
+                            <li>Seamless application for complex geometries</li>
+                            <li>Excellent adhesion to multiple substrates</li>
+                            <li>Chemical and abrasion resistance</li>
+                            <li>Temperature range -40°C to +80°C</li>
+                        </ul>
+                        <a href="solutions.html" class="btn-primary">Learn More</a>
+                    </div>
+                    <div class="solution-visual liquid-applied">
+                        <img src="liquid-applied-solutions.jpg" alt="Liquid Applied Solutions" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsea Infrastructure -->
+            <div class="solution-row">
+                <div class="solutions-inner">
+                    <div class="solution-content">
+                        <h3>On-Pipe Subsea Infrastructure</h3>
+                        <p>Flexilon product range offering proven performance from 90°C to 140°C wet conditions with low-pressure, safe alternatives to injection moulded products. Designed for demanding subsea applications with reliable long-term performance.</p>
+                        <ul class="solution-features">
+                            <li>High-temperature performance to 140°C</li>
+                            <li>Low-pressure application process</li>
+                            <li>Proven subsea track record</li>
+                            <li>Mercury-free formulations</li>
+                        </ul>
+                        <a href="solutions.html" class="btn-primary">Learn More</a>
+                    </div>
+                    <div class="solution-visual subsea-infrastructure">
+                        <img src="rosehill_onpipe.jpg" alt="On-Pipe Subsea Infrastructure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Flexilon Product Range</h2>
+            <p class="section-subtitle">Proven subsea infrastructure solutions for extreme temperature environments</p>
+            
+            <div class="products-grid">
+                <div class="product-item">
+                    <div class="product-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="40" height="40" fill="#ff6b35">
+                            <g><g id="Glyph"><g><path d="M32,39.33594c-1.75977,1.62451-4,4.18311-4,5.66406,0,2.20557,1.79395,4,4,4s4-1.79443,4-4c0-1.48389-2.23926-4.0415-4-5.66406Z"/><path d="M32,33c-6.06543,0-11,4.93457-11,11s4.93457,11,11,11,11-4.93457,11-11-4.93457-11-11-11ZM32,51c-3.30859,0-6-2.69141-6-6,0-3.13379,4.80566-7.29834,5.35352-7.7627.37305-.31641.91992-.31641,1.29297,0,.54785.46436,5.35352,4.62891,5.35352,7.7627,0,3.30859-2.69141,6-6,6Z"/><path d="M9,56c0,.55225.44727,1,1,1h6c.55273,0,1-.44775,1-1v-5h-8v5Z"/><path d="M17.5,46h-9c-.82843,0-1.5.67157-1.5,1.5s.67157,1.5,1.5,1.5h9c.82843,0,1.5-.67157,1.5-1.5s-.67157-1.5-1.5-1.5Z"/><path d="M9,29v15h8v-15h2v-8h-2c-4.41113,0-8,3.58887-8,8Z"/><path d="M47,56c0,.55225.44727,1,1,1h6c.55273,0,1-.44775,1-1v-5h-8v5Z"/><path d="M55.5,46h-9c-.82843,0-1.5.67157-1.5,1.5s.67157,1.5,1.5,1.5h9c.82843,0,1.5-.67157,1.5-1.5s-.67157-1.5-1.5-1.5Z"/><path d="M47,44h8v-15c0-4.41113-3.58887-8-8-8h-2v8h2v15Z"/><rect x="26" y="15" width="12" height="2"/><path d="M42,17c-.55231,0-1,.44769-1,1v14c0,.55225.44769,1,1,1s1-.44775,1-1v-14c0-.55231-.44769-1-1-1Z"/><path d="M22,33c.55231,0,1-.44775,1-1v-14c0-.55231-.44769-1-1-1s-1,.44769-1,1v14c0,.55225.44769,1,1,1Z"/><rect x="29" y="11" width="6" height="2"/><rect x="25" y="19" width="14" height="12"/><path d="M26,9h12c.55231,0,1-.44775,1-1,0-.55231-.44769-1-1-1h-12c-.55231,0-1,.44769-1,1,0,.55225.44769,1,1,1Z"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="product-title">Flexilon 3060</h3>
+                    <p class="product-description">Proven track record in demanding subsea applications with reliable performance and established industry acceptance.</p>
+                    <div class="product-specs">
+                        <span>90°C Wet Conditions</span>
+                        <span>Proven Track Record</span>
+                        <span>Versatile Applications</span>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="40" height="40" fill="#ff6b35">
+                            <g><g id="Glyph"><g><path d="M45,53v3c0,.54999-.45001,1-1,1H12c-.54999,0-1-.45001-1-1v-3h34Z"/><path d="M52,23h-1v-2c0-.27002-.10999-.52002-.28998-.71002l-2-2c-.39001-.39001-1.03003-.39001-1.42004,0-.38995.39001-.38995,1.03003,0,1.41998l1.71002,1.70001v1.59003h-1c-.54999,0-1,.45001-1,1v6c0,.54999.45001,1,1,1h1v13c0,1.09998-.90002,2-2,2s-2-.90002-2-2v-5c0-1.65002-1.34998-3-3-3h-3v-13h-22v28h22v-13h3c.54999,0,1,.45001,1,1v5c0,2.20996,1.78998,4,4,4s4-1.79004,4-4v-13h1c.54999,0,1-.45001,1-1v-6c0-.54999-.45001-1-1-1ZM35,48c0,.54999-.45001,1-1,1h-12c-.54999,0-1-.45001-1-1v-22c0-.54999.45001-1,1-1h12c.54999,0,1,.45001,1,1v22Z"/><path d="M28,39c.55176,0,1-.44873,1-1-.00781-.30469-.42383-1.17578-1-2.14648-.5752.97021-.99121,1.84131-1,2.14746,0,.55078.44922.99902,1,.99902Z"/><path d="M37,10c0-1.6543-1.3457-3-3-3h-12c-1.6543,0-3,1.3457-3,3v5h18v-5ZM32,12h-8c-.55273,0-1-.44775-1-1s.44727-1,1-1h8c.55273,0,1,.44775,1,1s-.44727,1-1,1Z"/><path d="M37,17h-18c-1.10457,0-2,.89543-2,2v2h22v-2c0-1.10457-.89543-2-2-2Z"/><path d="M23,47h10v-20h-10v20ZM27.17676,33.43164c.375-.54102,1.27148-.54102,1.64648,0,.6543.94775,2.17676,3.29004,2.17676,4.56836,0,1.6543-1.3457,3-3,3s-3-1.3457-3-3c0-1.27832,1.52246-3.62061,2.17676-4.56836Z"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="product-title">Flexilon 3173</h3>
+                    <p class="product-description">Higher temperature performance solution suitable for challenging environments, providing robust performance for static applications.</p>
+                    <div class="product-specs">
+                        <span>120°C Wet Conditions</span>
+                        <span>Robust Performance</span>
+                        <span>Static Applications</span>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="40" height="40" fill="#ff6b35">
+                            <g><g id="Glyph"><g><circle cx="30.99997" cy="46" r="1"/><path d="M33.49899,41.6748c-.30908-.17871-.49902-.50879-.49902-.86523v-15.80957c0-1.10254-.89697-2-2-2s-2,.89746-2,2v15.80957c0,.35645-.18994.68652-.49902.86523-1.54248.89355-2.50098,2.55078-2.50098,4.3252,0,2.75684,2.24316,5,5,5s5-2.24316,5-5c0-1.77441-.9585-3.43164-2.50098-4.3252ZM30.99997,49c-1.6543,0-3-1.3457-3-3s1.3457-3,3-3,3,1.3457,3,3-1.3457,3-3,3Z"/><path d="M37.99997,31c0-1.04004.58002-1.98999,1.51001-2.46002l4.48999-2.23999V10c0-1.65002-1.34998-3-3-3h-20c-1.65002,0-3,1.34998-3,3v44c0,1.64996,1.34998,3,3,3h20c1.65002,0,3-1.35004,3-3v-18.29999l-4.47998-2.24005c-.94-.46997-1.52002-1.40997-1.52002-2.45996ZM30.99997,11c1.06689,0,2.0708.41602,2.82715,1.17285.39062.39062.39062,1.02344,0,1.41406s-1.02344.39062-1.41406,0c-.37842-.37891-.88037-.58691-1.41309-.58691-1.10303,0-2,.89746-2,2s.89697,2,2,2c.53271,0,1.03467-.20801,1.41309-.58691.39062-.39062,1.02344-.39062,1.41406,0s.39062,1.02344,0,1.41406c-.75635.75684-1.76025,1.17285-2.82715,1.17285-2.20557,0-4-1.79395-4-4s1.79443-4,4-4ZM22.99997,21h1c.55225,0,1,.44727,1,1s-.44775,1-1,1h-1c-.55225,0-1-.44727-1-1s.44775-1,1-1ZM22.99997,25h1c.55225,0,1,.44727,1,1s-.44775,1-1,1h-1c-.55225,0-1-.44727-1-1s.44775-1,1-1ZM22.99997,29h1c.55225,0,1,.44727,1,1s-.44775,1-1,1h-1c-.55225,0-1-.44727-1-1s.44775-1,1-1ZM22.99997,33h1c.55225,0,1,.44727,1,1s-.44775,1-1,1h-1c-.55225,0-1-.44727-1-1s.44775-1,1-1ZM21.99997,38c0-.55273.44775-1,1-1h1c.55225,0,1,.44727,1,1s-.44775,1-1,1h-1c-.55225,0-1-.44727-1-1ZM30.99997,53c-3.85986,0-7-3.14062-7-7,0-2.28809,1.13623-4.43652,3-5.73828v-15.26172c0-2.20605,1.79443-4,4-4s4,1.79395,4,4v15.26172c1.86377,1.30176,3,3.4502,3,5.73828,0,3.85938-3.14014,7-7,7Z"/><path d="M45.64444,28.112c-.22119-.13696-.49768-.14868-.72986-.03296l-4.50006,2.25006c-.25415.12744-.41455.38672-.41455.6709s.1604.54346.41455.6709l4.50005,2.25006c.49235.24618,1.08546-.11595,1.08546-.67096v-4.50006c0-.26001-.13477-.50098-.35559-.63794Z"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="product-title">Flexilon 3604</h3>
+                    <p class="product-description">Our newest innovation capable of withstanding the most extreme conditions, tested and developed for high-performance in demanding environments.</p>
+                    <div class="product-specs">
+                        <span>140°C Wet Conditions</span>
+                        <span>Newest Technology</span>
+                        <span>High-Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="about">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose Rosehill Energy?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Two decades of polymer innovation meeting the rigorous demands of the energy sector</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512" width="50" height="50" fill="white">
+                            <g><g id="Glyph"><g><path d="m482 66h-452c-16.542 0-30 13.458-30 30v320c0 16.542 13.458 30 30 30h452c16.542 0 30-13.458 30-30v-320c0-16.542-13.458-30-30-30zm-51.608 360-99.391-57.384v-23.096l139.395 80.48zm40.004-340-139.395 80.479v-23.096l99.39-57.383zm21.604 283.19-66.145-38.189h66.145zm0-272.569v23.095l-106.143 61.282h-40.003zm0 46.189v38.188h-66.144zm0 168.191h-170.999c-5.522 0-10 4.477-10 10v104.999h-20.001v-135h201zm-160.999 114.998v-34.29l59.392 34.291zm14.851-94.998h40.003l106.145 61.282v23.095zm44.54-245.001-59.391 34.29v-34.29zm-79.391 0v104.999c0 5.523 4.478 10 10 10h170.999v20.001h-201v-135zm-40.001 0v145c0 5.523 4.478 10 10 10h211v30h-211c-5.522 0-10 4.477-10 10v145h-30v-145c0-5.523-4.477-10-10-10h-211v-30h211c5.523 0 10-4.477 10-10v-145zm-229.396 340 139.394-80.479v23.095l-99.391 57.384zm17.601-306.744c1.575.909 3.294 1.341 4.991 1.341 3.456 0 6.817-1.793 8.669-5.001 2.762-4.783 1.123-10.899-3.66-13.66l-27.601-15.936h40.004l99.39 57.384v23.096l-33.841-19.538c-4.781-2.76-10.898-1.123-13.66 3.66s-1.123 10.899 3.66 13.66l28.989 16.737h-40.003l-106.143-61.283v-23.096zm-39.205 211.745h66.145l-66.145 38.189zm0-188.191 66.144 38.188h-66.144zm0 249.473 106.144-61.283h40.004l-146.148 84.379zm160.999-.574v34.29h-59.392zm10-80.708h-170.999v-20.001h201v135h-20.001v-104.999c0-5.523-4.478-10-10-10zm30.001-225.001v135h-201v-20.001h170.998c5.523 0 10-4.477 10-10v-104.999zm-40.001 34.29-59.392-34.29h59.391v34.29z"/><path d="m103.184 143.1c5.523 0 10-4.477 10-10s-4.477-10-10-10h-.007c-5.523 0-9.996 4.477-9.996 10s4.48 10 10.003 10z"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">UK-Based Excellence</h3>
+                    <p class="benefit-description">Based in the heart of the UK with state-of-the-art facilities and local expertise supporting global energy projects.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="50" height="50" fill="white">
+                            <g><g id="Glyph"><g><path d="M53.5,28c1.6543,0,3-1.3457,3-3,0-1.1601-.66876-2.15704-1.6347-2.65601-.00159-1.06006-.23517-2.01855-.7193-2.84399-1.55029-2.68457-5.32422-3.78516-10.61426-3.10059-.73022.09442-1.48352.23065-2.24762.38837-.64276-1.93939-1.41241-3.66632-2.29602-5.11365.323-.47852.5119-1.05463.5119-1.67413,0-1.6543-1.3457-3-3-3-.62769,0-1.20978.19513-1.69196.526-.74658-.34723-1.5199-.526-2.30804-.526-3.63489,0-6.80432,3.81549-8.79572,9.81635-1.51843-.31525-2.96136-.50525-4.31128-.56793-.33594-1.28943-1.49976-2.24841-2.89301-2.24841-1.6543,0-3,1.3457-3,3,0,.05817.01385.11255.01715.16992-1.17761.54944-2.08173,1.32214-2.66217,2.3291-.80518,1.38965-.95264,3.07227-.4375,5.00098.62225,2.33044,2.20972,4.91376,4.51617,7.5-2.30646,2.58624-3.89392,5.16956-4.51617,7.5-.51514,1.92871-.36768,3.61133.43652,5,1.24951,2.16406,3.94092,3.29883,7.71094,3.29883.90723,0,1.87695-.06543,2.90332-.19824.72968-.09436,1.48248-.23047,2.24603-.388,1.99194,5.98395,5.15674,9.78741,8.78571,9.78741,1.56891,0,3.09717-.71173,4.45508-2.05505.17725.03278.35834.05505.54492.05505,1.6543,0,3-1.3457,3-3,0-.59662-.17975-1.14996-.48114-1.61761.46222-.98083.89026-2.03143,1.26648-3.16986.76367.15759,1.5166.29364,2.2464.38806,1.02686.13281,1.99609.19824,2.90332.19824,3.76953,0,6.46143-1.13477,7.70996-3.29785.80518-1.38965.95264-3.07227.4375-5.00098-.62213-2.3299-2.20911-4.91266-4.51471-7.49829,1.211-1.35754,2.22345-2.71692,3.00409-4.04498.14105.02045.28149.04327.4281.04327ZM43.78809,18.38281c4.37646-.56934,7.521.2041,8.62891,2.12305.26361.44904.40546.97736.44189,1.56677-1.34662.29486-2.35889,1.49353-2.35889,2.92737,0,.78296.30841,1.49066.80127,2.02539-.68579,1.15503-1.56415,2.33862-2.60999,3.52539-1.59753-1.60443-3.45581-3.18958-5.51733-4.69989-.27423-2.54352-.71637-4.95258-1.30933-7.1463.65411-.13092,1.29718-.24078,1.92346-.32178ZM37,39.79395c-1.49487.86334-3.00128,1.63678-4.5,2.33014-1.49872-.69336-3.00513-1.4668-4.5-2.33014-1.49493-.86322-2.92743-1.78467-4.2793-2.74274-.14227-1.604-.2207-3.28912-.2207-5.05121s.07843-3.4472.2207-5.05121c1.35187-.95807,2.78436-1.87952,4.2793-2.74274,1.49292-.86224,2.99744-1.63489,4.4942-2.32751,1.50403.69385,3.01453,1.46533,4.5058,2.32751,1.48895.8598,2.91571,1.77747,4.26282,2.73145.15289,1.64868.23718,3.34369.23718,5.0625,0,1.72333-.07953,3.41742-.22882,5.0611-1.34906.95142-2.7757,1.86957-4.27118,2.73285ZM40.96661,39.68884c-.2608,1.82086-.62323,3.54077-1.06165,5.14972-1.61066-.42395-3.28107-.99023-4.97729-1.67017,1.02661-.51428,2.05292-1.05328,3.07233-1.64203,1.01965-.58862,2.00775-1.20435,2.96661-1.83752ZM30.07233,43.1684c-1.70227.68237-3.37872,1.25073-4.99475,1.67517-.42847-1.57001-.78424-3.29321-1.04858-5.15668.95813.633,1.94824,1.24884,2.97101,1.83948,1.01941.58875,2.04572,1.12775,3.07233,1.64203ZM21.60303,35.461c-1.43274-1.1308-2.75049-2.29315-3.91223-3.461,1.16174-1.16785,2.47949-2.3302,3.91223-3.461-.0661,1.12988-.10303,2.28357-.10303,3.461s.03693,2.33112.10303,3.461ZM24.02899,24.31311c.2641-1.86169.61951-3.58337,1.04742-5.15222,1.60938.42474,3.28613.99036,4.9917,1.67279-1.02521.51367-2.05011,1.052-3.06812,1.63995-1.02277.59064-2.01288,1.20648-2.97101,1.83948ZM34.92456,20.83282c1.69611-.67999,3.36646-1.24634,4.97705-1.67041.43451,1.59955.78674,3.32666,1.04974,5.13855-.95197-.6283-1.93518-1.23987-2.95087-1.82635-1.01807-.58868-2.04608-1.12817-3.07593-1.64178ZM43.39545,28.53784c1.43726,1.13428,2.75922,2.30035,3.92371,3.4718-1.17017,1.1778-2.49072,2.34595-3.93573,3.48053.06891-1.14972.11658-2.31079.11658-3.49017,0-1.17047-.03741-2.32538-.10455-3.46216ZM32.5,9c.38098,0,.75226.07227,1.12122.2027-.07098.25555-.12122.51947-.12122.7973,0,1.6543,1.3457,3,3,3,.30377,0,.59131-.05884.86786-.14319.73895,1.24164,1.39404,2.72729,1.95404,4.39429-2.2041.58533-4.50366,1.41107-6.82837,2.43866-2.33203-1.02362-4.63989-1.83661-6.84406-2.42065,1.75922-5.20599,4.35327-8.2691,6.85052-8.2691ZM12.58643,20.49902c.35992-.62329.93365-1.12122,1.69904-1.49274.54926.60577,1.33429.99371,2.21454.99371,1.21295,0,2.25439-.72681,2.72675-1.76489,1.21869.04395,2.5249.20258,3.90747.48077-.58856,2.16986-1.03479,4.56848-1.31061,7.13654-2.05457,1.50555-3.90717,3.08533-5.50092,4.68445-2.03302-2.29865-3.44086-4.5611-3.9726-6.55249-.37354-1.39746-.29395-2.56934.23633-3.48535ZM21.21191,45.61719c-4.37988.56836-7.52148-.20508-8.62646-2.11816-.5293-.91406-.60889-2.08594-.23535-3.4834.53174-1.99139,1.93958-4.25385,3.9726-6.55249,1.59375,1.59912,3.44635,3.17889,5.50092,4.68445.27631,2.57239.72357,4.97473,1.3136,7.14746-.65472.13104-1.2984.24109-1.92529.32214ZM38.38367,49.14807c-.28119-.08746-.5741-.14807-.88367-.14807-1.6543,0-3,1.3457-3,3,0,.71167.2594,1.35748.67493,1.87238-.86633.74561-1.76276,1.12762-2.67493,1.12762-2.49353,0-5.0838-3.05334-6.8429-8.24506,2.20837-.58508,4.51306-1.41229,6.8429-2.44177,2.32428,1.02704,4.62323,1.85236,6.82684,2.43719-.28717.85016-.60468,1.64453-.94318,2.39771ZM52.6499,40.01562c.37354,1.39746.29395,2.56934-.23633,3.48438-1.10352,1.91211-4.24707,2.68555-8.62549,2.11719-.63-.08148-1.27722-.1925-1.93536-.32446.59259-2.1944,1.03088-4.59552,1.30554-7.12378,2.05786-1.50537,3.91748-3.09229,5.52271-4.7016,2.03101,2.29712,3.4375,4.55811,3.96893,6.54828Z"/><path d="M34.5,28c-.17676,0-.35303.01172-.52832.03613-.69629-1.23438-2.01416-2.03613-3.47168-2.03613-2.20557,0-4,1.79395-4,4,0,.70508.19043,1.39355.54541,2-.35498.60645-.54541,1.29492-.54541,2,0,2.20605,1.79443,4,4,4,1.45752,0,2.77539-.80176,3.47168-2.03613.17529.02441.35156.03613.52832.03613,2.20557,0,4-1.79395,4-4s-1.79443-4-4-4Z"/><circle cx="45.5" cy="52" r="3"/><path d="M12.5,51c-.33838,0-.67676.06055-1,.17773-.32324-.11719-.66162-.17773-1-.17773-1.6543,0-3,1.3457-3,3s1.3457,3,3,3c.33838,0,.67676-.06055,1-.17773.32324.11719.66162.17773,1,.17773,1.6543,0,3-1.3457,3-3s-1.3457-3-3-3Z"/><circle cx="20.5" cy="52" r="3"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Advanced Chemistry</h3>
+                    <p class="benefit-description">Unique mercury-free polymer alloys combining epoxy and PU systems for enhanced temperature performance.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="50" height="50" fill="white">
+                            <g><g id="Glyph"><g><path d="M32,7c-13.78516,0-25,11.21484-25,25s11.21484,25,25,25,25-11.21484,25-25S45.78516,7,32,7ZM32,53c-11.57959,0-21-9.4209-21-21,0-.55273.44775-1,1-1s1,.44727,1,1c0,10.47656,8.52344,19,19,19,.55225,0,1,.44727,1,1s-.44775,1-1,1ZM42.7998,27.59961s-14.97804,19.97072-14.99998,19.99997c-.26261.35014-.7728.50694-1.20803.31351-.42627-.19043-.66406-.65137-.57227-1.10938l2.26074-11.30371h-6.28027c-.31396,0-.60938-.14746-.79834-.39746-.18896-.25098-.24951-.5752-.16309-.87695l5-17.5c.12256-.42969.51514-.72559.96143-.72559h10c.30811,0,.59863.1416.78809.38477.18945.24219.25684.55859.18213.85742l-2.18945,8.75781h6.21924c.37891,0,.7251.21387.89453.55273s.13281.74414-.09473,1.04688ZM52,33c-.55225,0-1-.44727-1-1,0-10.47656-8.52344-19-19-19-.55225,0-1-.44727-1-1s.44775-1,1-1c11.57959,0,21,9.4209,21,21,0,.55273-.44775,1-1,1Z"/><path d="M33.71191,27.61523c-.18945-.24219-.25684-.55859-.18213-.85742l2.18945-8.75781h-7.96484l-4.42871,15.5h6.17432c.2998,0,.5835.13477.77344.36621s.26611.53613.20703.83008l-1.63525,8.17676,11.15479-14.87305h-5.5c-.30811,0-.59863-.1416-.78809-.38477Z"/></g></g></g>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Continuous Innovation</h3>
+                    <p class="benefit-description">State-of-the-art continuous reactor technology enabling rapid formulation and consistent quality.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg version="1.1" id="Glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50" fill="white">
+                            <g><path d="M48,46.65674c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496 c-1.46289,0-2.85352-0.46875-4.00049-1.33496c-2.35938,1.77539-5.63965,1.77539-7.99902,0 c-1.14697,0.86621-2.5376,1.33496-4.00049,1.33496c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496 c-1.50439,0-2.93213-0.49609-4.09766-1.41016l-4.86523,3.09668C7.02533,48.35077,7.01202,48.35297,7,48.35992v3.02216 l4.55273-2.27637c0.38623-0.19434,0.85059-0.11621,1.1543,0.1875c1.81543,1.81641,4.77051,1.81641,6.58594,0 c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0 c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0 c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0 c0.3042-0.30371,0.76904-0.38086,1.1543-0.1875L57,51.38208v-3.7644l-4.83984-2.41992 C50.9834,46.14307,49.53125,46.65674,48,46.65674z"/><path d="M32,31.00024c3.30859,0,6-2.69141,6-6s-2.69141-6-6-6s-6,2.69141-6,6S28.69141,31.00024,32,31.00024z M29.16797,24.44556 l2-3c0.30664-0.45996,0.92676-0.58301,1.38672-0.27734c0.45947,0.30664,0.5835,0.92676,0.27734,1.38672l-0.96338,1.44531H34 c0.36865,0,0.70752,0.20312,0.88184,0.52832c0.17383,0.3252,0.15479,0.71973-0.0498,1.02637c0,0-1.99194,2.98792-1.99998,2.99996 c-0.7137,1.07054-2.38142-0.03162-1.66409-1.10934l0.96338-1.44531H30c-0.36865,0-0.70752-0.20312-0.88184-0.52832 C28.94434,25.14673,28.96338,24.7522,29.16797,24.44556z"/><path d="M32,37.00024c6.6167,0,12-5.38281,12-12c0-6.4082-10.83398-17.25098-11.29492-17.70898 c-0.39062-0.38867-1.01953-0.38867-1.41016,0C30.83398,7.74927,20,18.59204,20,25.00024C20,31.61743,25.3833,37.00024,32,37.00024z M32,17.00024c4.41113,0,8,3.58887,8,8s-3.58887,8-8,8s-8-3.58887-8-8S27.58887,17.00024,32,17.00024z"/></g>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Extreme Performance</h3>
+                    <p class="benefit-description">Superior performance in hot-wet conditions, exceptional abrasion resistance, and enhanced adhesion properties.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg version="1.1" id="Glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50" fill="white">
+                            <g><path d="M14.11719,26.77344c0.45074,0.67767,1.51959,0.53296,1.78027-0.23242C17.78613,20.97363,22.36328,16.8252,28,15.48145c0,0,0,0.5166,0,0.51855c0,0.78662,0.90021,1.26691,1.55469,0.83203l6-4C35.83301,12.64648,36,12.33398,36,12s-0.16699-0.64648-0.44531-0.83203l-6-4c-0.30566-0.2041-0.70215-0.22363-1.02637-0.0498C28.20312,7.29199,28,7.63086,28,8v1.35352c-7.18066,1.25586-13.34473,5.84863-16.60547,12.42188c-0.15918,0.32031-0.13477,0.7002,0.0625,0.99805C11.45703,22.77344,14.10522,26.75537,14.11719,26.77344z"/><path d="M56.87042,28.53387C56.70544,28.22626,56.38885,28,56,28h-1.35352c-1.25586-7.18066-5.84863-13.34473-12.42188-16.60547c-0.32129-0.16113-0.7002-0.13477-0.99805,0.0625c0,0-3.9939,2.65613-4,2.66016c-0.68103,0.45288-0.5387,1.51764,0.23242,1.78027C43.02637,17.78613,47.1748,22.36328,48.51855,28H48c-0.36914,0-0.70801,0.20312-0.88184,0.52832s-0.15527,0.71973,0.0498,1.02637c0,0,3.99207,5.98804,4,5.99994c0.39093,0.58643,1.27441,0.58447,1.66406,0.00006c0,0,3.98975-5.98462,4-6C57.04877,29.22955,57.03522,28.84113,56.87042,28.53387z"/><path d="M49.88281,37.22656c-0.4527-0.68066-1.51733-0.53967-1.78027,0.23242C46.21387,43.02637,41.63672,47.1748,36,48.51855c0,0,0-0.5163,0-0.51855c0-0.77795-0.90851-1.26147-1.55469-0.83203l-6,4C28.16699,51.35352,28,51.66602,28,52s0.16699,0.64648,0.44531,0.83203l6,4C35.0932,57.26392,36,56.77985,36,56v-1.35352c7.18066-1.25586,13.34473-5.84863,16.60547-12.42188c0.15918-0.32031,0.13477-0.7002-0.0625-0.99805C52.54297,41.22656,49.89246,37.24109,49.88281,37.22656z"/><path d="M26.54102,48.10254C20.97363,46.21387,16.8252,41.63672,15.48145,36c0,0,0.51764,0,0.51855,0c0.78406,0,1.26984-0.90009,0.83203-1.55469l-4-6c-0.37109-0.55664-1.29297-0.55664-1.66406,0c0,0-3.99341,5.99011-4,6C6.73151,35.09998,7.21613,36,8,36h1.35352c1.25586,7.18066,5.84863,13.34473,12.42194,16.60547c0.32031,0.16016,0.70105,0.13373,0.99799-0.0625c0,0,3.98718-2.65167,3.99994-2.66016C27.45435,49.42993,27.31018,48.36444,26.54102,48.10254z"/><path d="M32.66406,19.25293c-0.3584-0.32031-0.89551-0.33984-1.27832-0.04199S22,26.60742,22,35c0,5.51367,4.48633,10,10,10s10-4.48633,10-10C42,27.63574,33.0459,19.5918,32.66406,19.25293z M32,41c-3.30859,0-6-2.69141-6-6c0-0.55273,0.44727-1,1-1s1,0.44727,1,1c0,2.20605,1.79395,4,4,4c0.55273,0,1,0.44727,1,1S32.55273,41,32,41z"/></g>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Energy Transition</h3>
+                    <p class="benefit-description">Supporting the shift towards sustainable energy solutions with key industry players on transition projects.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg id="Glyph" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="50" height="50" fill="white">
+                            <path d="M41.86621,22.13428c-.37695.38965-1.06055.38965-1.4375,0l-1.73975-1.79834-1.29785,1.3418,3.75635,3.88379,9.46143-9.78174-1.29785-1.34131-7.44482,7.6958Z" fill="white" stroke-width="0"/>
+                            <path d="M44,7c-7.16797,0-13,5.83154-13,13s5.83203,13,13,13,13-5.83154,13-13-5.83203-13-13-13ZM52.71875,16.4751s-10.83881,11.20599-10.85254,11.22021c-.39178.40503-1.04712.4035-1.4375,0l-5.14746-5.32227c-.375-.3877-.375-1.00293,0-1.39062l2.68896-2.77979c.37695-.38965,1.06055-.38965,1.4375,0l1.73975,1.79834,7.44482-7.69629c.37695-.38965,1.06055-.38965,1.4375,0l2.68896,2.77979c.375.3877.375,1.00293,0,1.39062Z" fill="white" stroke-width="0"/>
+                            <polygon points="19 45.7207 7 41.72095 7 43.61267 19 47.61279 19 45.7207" fill="white" stroke-width="0"/>
+                            <polygon points="37 47.61279 49 43.61267 49 41.72095 37 45.7207 37 47.61279" fill="white" stroke-width="0"/>
+                            <path d="M29.01001,20.29999l-.67999-.23999c-.21002-.08002-.45001-.08002-.66003,0l-19.66455,6.88257,19.99457,6.99786,6.55707-2.29486c-3.31592-2.69434-5.46271-6.77319-5.54706-11.34558Z" fill="white" stroke-width="0"/>
+                            <path d="M7,35.61261l13.31641,4.43866c.52344.1748.80664.74115.63184,1.26508-.16608.49786-.73975.80731-1.26465.63239l-12.68359-4.22772v1.8916l13.31641,4.43866c.4082.13623.68359.51807.68359.94873v3.99988c0,.67041-.68701,1.15668-1.31641.94885l-12.68359-4.22772v3.27899c0,.41998.27002.79999.66998.94l19.33002,7.06v-21.29065l-20-6.99988v6.90314Z" fill="white" stroke-width="0"/>
+                            <path d="M36.62225,33.04163l-7.62225,2.66772v21.29065l19.33002-7.06c.39996-.14001.66998-.52002.66998-.94v-3.27899s-12.68359,4.22772-12.68365,4.22772c-.63953.21112-1.31635-.27155-1.31635-.94873v-4c0-.43066.27539-.8125.68359-.94873l13.31641-4.43866v-1.8916s-12.63641,4.21198-12.68347,4.22766c-.49579.16528-1.08893-.10474-1.26477-.63226-.1748-.52393.1084-1.09033.63184-1.26514l13.31641-4.43866v-1.4726c-1.56.56-3.23999.85999-5,.85999-2.68256,0-5.19629-.71912-7.37775-1.95837Z" fill="white" stroke-width="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Quality Assured</h3>
+                    <p class="benefit-description">Manufactured under ISO 9001:2008 standards ensuring reliability and peace of mind for global installations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Engineering the Future of Energy</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Partner with us to develop bespoke polymer solutions that exceed the evolving challenges of oil and gas extraction and transport.</p>
+            <div class="cta-buttons">
+                <a href="contact-us.html" class="btn-white">Request Technical Consultation</a>
+                <a href="contact-us.html" class="btn-outline-white">Download Technical Brochure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><strong>Rosehill Energy</strong><br>
+                    Beech Road<br>
+                    Sowerby Bridge<br>
+                    West Yorkshire<br>
+                    United Kingdom<br>
+                    HX6 2JT</p>
+                    <p>📞 +44 (0) 1422 839 610<br>
+                    📧 info@rosehillenergy.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html">Advanced Polymer Solutions</a></li>
+                        <li><a href="solutions.html#liquid-applied">Liquid-Applied Systems</a></li>
+                        <li><a href="solutions.html#subsea-infrastructure">Subsea Infrastructure</a></li>
+                        <li><a href="solutions.html#flexilon">Flexilon Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="innovation.html">Innovation & R&D</a></li>
+                        <li><a href="manufacturing.html">Manufacturing</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About Rosehill Energy</h3>
+                    <p>Pioneering polymer innovation for over two decades, formulating and manufacturing bespoke polymer systems engineered to perform in the toughest marine and onshore environments.</p>
+                    <p style="margin-top: 20px;">
+                        <strong>Certifications:</strong><br>
+                        ISO 9001:2008 • Advanced Polymer Chemistry • Continuous Reactor Technology
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Rosehill Energy. Part of Rosehill Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced scroll effect for header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(26, 54, 93, 0.98), rgba(45, 74, 113, 0.98))';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a365d, #2d4a71)';
+                header.style.backdropFilter = 'none';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe solution cards and benefit items for animation
+        document.querySelectorAll('.solution-card, .benefit-item, .product-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

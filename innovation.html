@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation & R&D - Rosehill Energy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+        }
+
+        .nav-menu a.active {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            background: #ff6b35;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .contact-btn:hover {
+            background: #e55a2b !important;
+            color: white !important;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-nav-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+
+        .mobile-nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-menu a:hover {
+            color: #ff6b35;
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 90px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95), rgba(45, 74, 113, 0.95)), 
+                        radial-gradient(circle at 70% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .section-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Research Focus Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .research-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 5px solid #ff6b35;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .research-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: block;
+            color: #ff6b35;
+        }
+
+        .research-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .research-description {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Development Process */
+        .process-section {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 100px 0;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #ff6b35, #1a365d);
+            transform: translateX(-50%);
+        }
+
+        .process-item {
+            position: relative;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .process-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .process-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .process-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            background: #ff6b35;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid white;
+            box-shadow: 0 0 0 3px #ff6b35;
+            z-index: 2;
+        }
+
+        .process-number {
+            font-family: 'Overpass', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff6b35;
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            right: 30px;
+        }
+
+        .process-item:nth-child(even) .process-number {
+            left: 30px;
+            right: auto;
+        }
+
+        .process-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .process-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Technology Section */
+        .technology-showcase {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .tech-text h3 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #ff6b35;
+        }
+
+        .tech-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .tech-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .tech-features li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .tech-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .tech-visual {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tech-icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .tech-icon-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .tech-icon-item span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+            color: #ff6b35;
+        }
+
+        .tech-icon-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Collaboration Section */
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .collaboration-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .collaboration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .collaboration-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            color: #ff6b35;
+        }
+
+        .collaboration-title {
+            font-family: 'Overpass', sans-serif;
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .collaboration-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Overpass', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #1a365d;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 13px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a365d, #2d4a71);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-item {
+                flex-direction: column !important;
+            }
+
+            .process-content {
+                width: 100%;
+                margin-left: 60px;
+            }
+
+            .process-dot {
+                left: 30px;
+            }
+
+            .tech-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .tech-icon-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="rosehill_energy_logo.png" alt="Rosehill Energy">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="innovation.html" class="active">Innovation & R&D</a></li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-nav-menu" id="mobile-menu">
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="innovation.html" class="active">Innovation & R&D</a>
+                    <a href="manufacturing.html">Manufacturing</a>
+                    <a href="about-us.html">About Us</a>
+                    <a href="contact-us.html" class="contact-btn">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-subtitle">Pushing the Boundaries of Polymer Chemistry</div>
+                    <h1>Innovation & R&D</h1>
+                    <p>Our research and development programme focuses on addressing key industry challenges through advanced material science, rigorous testing protocols, and strategic collaboration with leading institutions and operators.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Focus Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Core Research Areas</h2>
+                <p class="section-subtitle">Targeted development programmes addressing critical subsea infrastructure challenges</p>
+                
+                <div class="research-grid">
+                    <div class="research-card">
+                        <span class="research-icon">
+                            <svg version="1.1" id="Glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="56" height="56" fill="#ff6b35">
+                                <g><circle cx="19" cy="35" r="2"/><path d="M24,28.76025V10c0-2.75684-2.24316-5-5-5s-5,2.24316-5,5v18.76025C12.1123,30.27441,11,32.56934,11,35c0,4.41113,3.58887,8,8,8s8-3.58887,8-8C27,32.56934,25.8877,30.27441,24,28.76025z M19,39c-2.20557,0-4-1.79443-4-4c0-1.85828,1.27972-3.41071,3-3.85797V12c0-0.55225,0.44775-1,1-1s1,0.44775,1,1v19.14203c1.72028,0.44727,3,1.99969,3,3.85797C23,37.20557,21.20557,39,19,39z"/><path d="M7,11h4c0.55225,0,1-0.44775,1-1s-0.44775-1-1-1H7c-0.55225,0-1,0.44775-1,1S6.44775,11,7,11z"/><path d="M11,13H9c-0.55225,0-1,0.44775-1,1s0.44775,1,1,1h2c0.55225,0,1-0.44775,1-1S11.55225,13,11,13z"/><path d="M12,18c0-0.55225-0.44775-1-1-1H7c-0.55225,0-1,0.44775-1,1s0.44775,1,1,1h4C11.55225,19,12,18.55225,12,18z"/><path d="M12,22c0-0.55225-0.44775-1-1-1H9c-0.55225,0-1,0.44775-1,1s0.44775,1,1,1h2C11.55225,23,12,22.55225,12,22z"/><circle cx="34" cy="15" r="1"/><path d="M41.70703,14.36426l-1.77832-1.77832v-2.51465c0-0.55225-0.44775-1-1-1h-2.51465l-1.77832-1.77832c-0.375-0.375-1.03906-0.375-1.41406,0l-1.77783,1.77832h-2.51514c-0.55225,0-1,0.44775-1,1v2.51465l-1.77783,1.77832c-0.39062,0.39062-0.39062,1.02344,0,1.41406l1.77783,1.77783v2.51514c0,0.55225,0.44775,1,1,1h2.51514c0,0,1.77783,1.77783,1.77786,1.77786c0.38726,0.38723,1.02717,0.38684,1.41404-0.00003l1.77832-1.77783h2.51465c0.55225,0,1-0.44775,1-1v-2.51514c0,0,1.77832-1.77783,1.77835-1.77787C42.09403,15.39128,42.09259,14.74981,41.70703,14.36426z M34,18c-1.6543,0-3-1.3457-3-3s1.3457-3,3-3s3,1.3457,3,3S35.6543,18,34,18z"/></g>
+                            </svg>
+                        </span>
+                        <h3 class="research-title">High-Temperature Applications</h3>
+                        <p class="research-description">Developing advanced polymer systems capable of maintaining mechanical properties and chemical resistance at service temperatures up to 140°C in hot-wet conditions.</p>
+                    </div>
+                    
+                    <div class="research-card">
+                        <span class="research-icon">
+                            <svg version="1.1" id="Glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="56" height="56" fill="#ff6b35">
+                                <g><path d="M48,46.65674c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496c-1.46289,0-2.85352-0.46875-4.00049-1.33496c-2.35938,1.77539-5.63965,1.77539-7.99902,0c-1.14697,0.86621-2.5376,1.33496-4.00049,1.33496c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496c-1.50439,0-2.93213-0.49609-4.09766-1.41016l-4.86523,3.09668C7.02533,48.35077,7.01202,48.35297,7,48.35992v3.02216l4.55273-2.27637c0.38623-0.19434,0.85059-0.11621,1.1543,0.1875c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.3042-0.30371,0.76904-0.38086,1.1543-0.1875L57,51.38208v-3.7644l-4.83984-2.41992C50.9834,46.14307,49.53125,46.65674,48,46.65674z"/><path d="M56.44727,41.10571l-4-2c-0.38623-0.19434-0.8501-0.11719-1.1543,0.1875C50.41064,40.17505,49.24121,40.6604,48,40.6604s-2.41064-0.48535-3.29297-1.36719c-0.39062-0.39062-1.02344-0.39062-1.41406,0C42.41064,40.17505,41.24121,40.6604,40,40.6604s-2.41064-0.48535-3.29297-1.36719c-0.39062-0.39062-1.02344-0.39062-1.41406,0C34.41064,40.17505,33.24121,40.6604,32,40.6604s-2.41064-0.48535-3.29297-1.36719c-0.39062-0.39062-1.02344-0.39062-1.41406,0C26.41064,40.17505,25.24121,40.6604,24,40.6604s-2.41064-0.48535-3.29297-1.36719c-0.39062-0.39062-1.02344-0.39062-1.41406,0C18.41064,40.17505,17.24121,40.6604,16,40.6604s-2.41064-0.48535-3.29297-1.36719c-0.30371-0.30371-0.76807-0.38184-1.1543-0.1875l-4,2C7.21387,41.27563,7,41.62134,7,42.00024v3.99554l4.46289-2.84003c0.39648-0.25,0.9126-0.19531,1.24414,0.13672c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.39062-0.39062,1.02344-0.39062,1.41406,0c1.81543,1.81641,4.77051,1.81641,6.58594,0c0.375-0.375,1.03906-0.375,1.41406,0c0.87939,0.87988,2.04883,1.36426,3.29297,1.36426s2.41357-0.48438,3.29297-1.36426c0.3042-0.30371,0.76904-0.38086,1.1543-0.1875L57,45.38135v-3.3811C57,41.62134,56.78613,41.27563,56.44727,41.10571z"/><path d="M48,52.65747c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496c-1.46289,0-2.85352-0.46875-4.00049-1.33496c-2.35938,1.77539-5.63965,1.77539-7.99902,0c-1.14697,0.86621-2.5376,1.33496-4.00049,1.33496c-1.4624,0-2.85303-0.46875-4-1.33496c-1.14697,0.86621-2.5376,1.33496-4,1.33496c-1.53125,0-2.9834-0.51367-4.16016-1.45898L7,53.61841v2.38184c0,0.55273,0.44775,1,1,1h48c0.55225,0,1-0.44727,1-1v-2.38184l-4.83984-2.41992C50.9834,52.1438,49.53125,52.65747,48,52.65747z"/><path d="M32,31.00024c3.30859,0,6-2.69141,6-6s-2.69141-6-6-6s-6,2.69141-6,6S28.69141,31.00024,32,31.00024z M29.16797,24.44556l2-3c0.30664-0.45996,0.92676-0.58301,1.38672-0.27734c0.45947,0.30664,0.5835,0.92676,0.27734,1.38672l-0.96338,1.44531H34c0.36865,0,0.70752,0.20312,0.88184,0.52832c0.17383,0.3252,0.15479,0.71973-0.0498,1.02637c0,0-1.99194,2.98792-1.99998,2.99996c-0.7137,1.07054-2.38142-0.03162-1.66409-1.10934l0.96338-1.44531H30c-0.36865,0-0.70752-0.20312-0.88184-0.52832C28.94434,25.14673,28.96338,24.7522,29.16797,24.44556z"/><path d="M32,37.00024c6.6167,0,12-5.38281,12-12c0-6.4082-10.83398-17.25098-11.29492-17.70898c-0.39062-0.38867-1.01953-0.38867-1.41016,0C30.83398,7.74927,20,18.59204,20,25.00024C20,31.61743,25.3833,37.00024,32,37.00024z M32,17.00024c4.41113,0,8,3.58887,8,8s-3.58887,8-8,8s-8-3.58887-8-8S27.58887,17.00024,32,17.00024z"/><path d="M13.70703,25.70728L14,25.41431v5.58594c0,0.55273,0.44775,1,1,1s1-0.44727,1-1v-5.58594c0,0,0.29177,0.29177,0.29296,0.29296c0.35692,0.35692,1.02893,0.38513,1.41407,0c0.39062-0.39062,0.39062-1.02344,0-1.41406l-2-2c-0.39062-0.39062-1.02344-0.39062-1.41406,0l-2,2c-0.39062,0.39062-0.39062,1.02344,0,1.41406S13.31641,26.0979,13.70703,25.70728z"/><path d="M48.29297,31.70728c0.19531,0.19531,0.45117,0.29297,0.70703,0.29297s0.51172-0.09766,0.70703-0.29297l2-2c0.39062-0.39062,0.39062-1.02344,0-1.41406s-1.02344-0.39062-1.41406,0L50,28.58618v-5.58594c0-0.55273-0.44775-1-1-1s-1,0.44727-1,1v5.58594l-0.29297-0.29297c-0.39062-0.39062-1.02344-0.39062-1.41406,0s-0.39062,1.02344,0,1.41406L48.29297,31.70728z"/></g>
+                            </svg>
+                        </span>
+                        <h3 class="research-title">Marine Environment Performance</h3>
+                        <p class="research-description">Long-term validation testing in natural seawater conditions, including hydrolysis resistance, cathodic disbondment, and accelerated ageing protocols.</p>
+                    </div>
+                    
+                    <div class="research-card">
+                        <span class="research-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="56" height="56" fill="#ff6b35">
+                                <g><g id="Glyph"><g><path d="M28,21c0,2.20996,1.78998,4,4,4s4-1.79004,4-4-1.78998-4-4-4-4,1.78998-4,4ZM32,20c.54999,0,1,.45001,1,1s-.45001,1-1,1-1-.45001-1-1,.45001-1,1-1Z"/><path d="M39.39001,25c3.64001,0,6.60999,2.96997,6.60999,6.60999,0,1.76001-.69,3.41998-1.94,4.66998l-4.77002,4.77002,5.66003,5.65997,4.76996-4.76996c2.76001-2.76001,4.28003-6.42999,4.28003-10.33002,0-8.06-6.54999-14.60999-14.60999-14.60999h-2.92999c.95996,1.06,1.53998,2.45996,1.53998,4s-.58002,2.94-1.53998,4h2.92999Z"/><path d="M31,26.90997c-2.84003-.46997-5-2.94-5-5.90997s2.15997-5.44,5-5.91003v-2.08997h-12v14h12v-.09003Z"/><path d="M29,8c0-.55225-.44775-1-1-1h-6c-.55225,0-1,.44775-1,1v3h8v-3Z"/><path d="M29,32v-3h-8v3c0,.55225.44775,1,1,1h6c.55225,0,1-.44775,1-1Z"/><polygon points="35 51 46.41406 51 35 39.58594 35 51"/><rect x="25" y="39" width="8" height="12"/><path d="M7,53v3c0,.55225.44775,1,1,1h48c.55225,0,1-.44775,1-1v-3H7Z"/><path d="M10,45h13v-6h-13c-.54999,0-1,.45001-1,1v4c0,.54999.45001,1,1,1Z"/></g></g></g>
+                            </svg>
+                        </span>
+                        <h3 class="research-title">Sustainable Polymer Technologies</h3>
+                        <p class="research-description">Pioneering mercury-free formulations and developing next-generation polymer chemistries that meet environmental regulations without compromising performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Development Process</h2>
+                <p class="section-subtitle">Systematic approach to polymer innovation ensuring reliable field performance</p>
+                
+                <div class="process-timeline">
+                    <div class="process-item">
+                        <div class="process-content">
+                            <span class="process-number">01</span>
+                            <h3 class="process-title">Material Development</h3>
+                            <p class="process-description">Formulation of novel polymer systems using advanced chemistry, including epoxy-polyurethane hybrids and specialised isocyanate systems for enhanced hot-wet performance.</p>
+                        </div>
+                        <div class="process-dot"></div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-content">
+                            <span class="process-number">02</span>
+                            <h3 class="process-title">Laboratory Validation</h3>
+                            <p class="process-description">Comprehensive testing including thermal analysis, mechanical property characterisation, and accelerated ageing studies to predict long-term field performance.</p>
+                        </div>
+                        <div class="process-dot"></div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-content">
+                            <span class="process-number">03</span>
+                            <h3 class="process-title">Field Testing</h3>
+                            <p class="process-description">Real-world validation through collaboration with operators, including subsea exposure testing and performance monitoring under actual service conditions.</p>
+                        </div>
+                        <div class="process-dot"></div>
+                    </div>
+                    
+                    <div class="process-item">
+                        <div class="process-content">
+                            <span class="process-number">04</span>
+                            <h3 class="process-title">Process Optimisation</h3>
+                            <p class="process-description">Continuous improvement of processing and application methods to ensure consistent quality, reduced cycle times, and compatibility with existing equipment.</p>
+                        </div>
+                        <div class="process-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Showcase Section -->
+        <section class="technology-showcase">
+            <div class="container">
+                <div class="tech-content">
+                    <div class="tech-text">
+                        <h3>Advanced Reactor Technology</h3>
+                        <p>Our state-of-the-art continuous reactor technology represents a step-change in polymer manufacturing capability, enabling rapid formulation of new chemistries while maintaining exceptional quality control.</p>
+                        <p>This technology facilitates accelerated development cycles, allowing us to respond quickly to emerging industry challenges and deliver customised solutions with significantly reduced lead times.</p>
+                        <ul class="tech-features">
+                            <li>Precise temperature and pressure control for optimal reaction conditions</li>
+                            <li>Real-time monitoring of reaction parameters</li>
+                            <li>Scalable from laboratory to production volumes</li>
+                            <li>Reduced batch-to-batch variation</li>
+                        </ul>
+                    </div>
+                    <div class="tech-visual">
+                        <div class="tech-icon-grid">
+                            <div class="tech-icon-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 48 48" width="48" height="48" fill="#ff6b35">
+                                    <g><g id="Glyph"><g><path d="M43,24c0-2.25067-1.64526-4.33502-4.62134-5.93964.37585-1.24762.55878-2.40497.55133-3.45038-.58997.38-1.27997.62-2.02002.65002-.05353.59491-.18274,1.24438-.37073,1.92999-1.30859-.53778-2.78094-.98352-4.39294-1.33606-.35468-1.62115-.80341-3.1001-1.34351-4.41125.68988-.18701,1.34076-.3078,1.93719-.35272.03003-.72998.26001-1.41998.64001-2-1.04956-.00244-2.20538.18634-3.43073.54913-1.60791-2.98877-3.69537-4.6391-5.94928-4.6391-2.29236,0-4.37701,1.67865-5.96716,4.62421-3.24286-.9621-5.88086-.6507-7.47034.93878-1.59179,1.5918-1.90197,4.22839-.93237,7.46643-2.94928,1.59076-4.63013,3.67688-4.63013,5.97058,0,2.25067,1.64532,4.33502,4.62134,5.93964-.37579,1.24762-.55878,2.40497-.55133,3.45038.58997-.38,1.27997-.62006,2.02002-.65002.05353-.59491.18274-1.24445.37073-1.92999,1.30859.53778,2.78094.98352,4.39294,1.33606.35388,1.61761.80127,3.09387,1.3399,4.40289-.68848.18591-1.3382.30615-1.93359.35101-.02002.74005-.26001,1.42999-.64001,2.01001h.02002c1.04395,0,2.19379-.18866,3.41113-.54828,1.60785,2.98834,3.69513,4.63831,5.94885,4.63831,2.29108,0,4.37457-1.67688,5.96442-4.61908,1.21667.36169,2.35162.55121,3.37347.55121,1.7041,0,3.10547-.50098,4.0996-1.49512,1.5918-1.5918,1.90198-4.22839.93238-7.46643,2.94928-1.59076,4.63013-3.67688,4.63013-5.97058ZM28.92993,35.8858c-1.02393-.42401-2.08038-.95447-3.13757-1.59088.62158-.45685,1.2428-.94446,1.86212-1.46277.79639-.07355,1.5802-.17365,2.35382-.29236-.30328,1.22351-.6662,2.34692-1.07837,3.34601ZM17.64001,17.64001c-.03906.039-.07489.07947-.11377.11853.04932-.29156.08972-.58942.14563-.87573.35126-1.7868.83038-3.3924,1.39819-4.76862,1.02417.42413,2.08087.95471,3.13831,1.59131-1.53564,1.12817-3.07458,2.44073-4.56836,3.93451ZM15.16998,20.33075c-.5191.61945-1.00049,1.24683-1.4635,1.87634-.64484-1.07025-1.1698-2.11774-1.58771-3.13855.99805-.41156,2.12006-.77411,3.34198-1.07733-.11804.76868-.21735,1.54761-.29077,2.33954ZM15.00366,23.8186c-.00024.05957-.00366.12201-.00366.1814,0,2.05981.15637,4.07153.45355,6.00708-1.21869-.30286-2.32812-.66992-3.33453-1.09064.68677-1.65912,1.66455-3.38263,2.88464-5.09784ZM17.55701,30.44373c-.36353-2.05878-.55701-4.21893-.55701-6.44373,0-.91113.03906-1.8548.10718-2.85138.61462-.71027,1.25763-1.41345,1.94281-2.09863.6944-.6944,1.39032-1.33856,2.0838-1.94159,1.0058-.06946,1.95288-.1084,2.86621-.1084,2.22443,0,4.38422.19342,6.44299.55627.36353,2.05878.55701,4.21893.55701,6.44373,0,.90894-.03906,1.85132-.1076,2.85187-.6145.71008-1.25732,1.41309-1.94238,2.09814-.69464.69458-1.39081,1.33881-2.08447,1.94165-1.00549.0694-1.95239.10834-2.86554.10834-2.22443,0-4.38422-.19342-6.44299-.55627ZM31.11816,30.32861h-.00012c-.00897.00165-.0177.00256-.02655.00446-.27765.05402-.56689.09351-.84979.1413.03925-.03894.0791-.0752.11829-.11438,1.47015-1.46594,2.78625-3.00708,3.93353-4.56708.6449,1.07031,1.1698,2.11792,1.58777,3.13867-1.37506.56702-2.9787,1.04572-4.76312,1.39703ZM32.99634,24.1814c.00024-.05957.00366-.12201.00366-.1814,0-2.05981-.15631-4.07159-.45349-6.00708,1.21869.30286,2.32806.66992,3.33447,1.09064-.68677,1.65912-1.66449,3.38257-2.88464,5.09784ZM30.0069,15.45374c-1.93579-.29724-3.94739-.45374-6.0069-.45374-.07056,0-.14471.00403-.21558.00439.23224-.16632.46228-.32251.69226-.47827.04913-.02686.09229-.0592.13684-.09454,1.50275-1.00616,2.95013-1.78314,4.29248-2.33643.4248,1.01093.79559,2.12842,1.10089,3.35858ZM24,7c1.40656,0,2.85272,1.19452,4.05438,3.3183-1.31024.54633-2.67493,1.26886-4.05884,2.15472-1.35083-.86969-2.72412-1.60431-4.05511-2.16376,1.18231-2.0885,2.6084-3.30927,4.05957-3.30927ZM11.97656,11.97705c.99231-.99231,2.85681-1.17365,5.20459-.53052-.52979,1.30139-.9776,2.77716-1.33118,4.4032-1.62366.35303-3.09766.80005-4.39771,1.32892-.64819-2.34357-.4693-4.20758.52429-5.2016ZM7,24c0-1.45203,1.22198-2.87872,3.31305-4.06152.54968,1.3208,1.27521,2.67938,2.16162,4.0589-.87537,1.36591-1.6004,2.72815-2.15649,4.05731-2.12195-1.20074-3.31818-2.64771-3.31818-4.05469ZM17.9931,32.54626c1.93573.29724,3.94739.45374,6.0069.45374.0694,0,.14252-.00397.21216-.00433-.23438.16766-.46667.3252-.69879.48206-.04193.0235-.07867.05121-.11725.08087-1.50714,1.00854-2.95898,1.78662-4.30493,2.33984-.42358-1.00928-.79346-2.12457-1.09808-3.35217ZM24,41c-1.40619,0-2.85199-1.19385-4.05353-3.31665.69519-.28986,1.40424-.62585,2.12354-1.01337.63849-.34271,1.28516-.7262,1.93536-1.14246,1.35059.86951,2.72351,1.60388,4.0542,2.16321-1.18231,2.0885-2.6084,3.30927-4.05957,3.30927ZM36.02344,36.02295c-.9931.99182-2.85681,1.17316-5.20441.5304.52979-1.30139.97766-2.7771,1.33124-4.40308,1.6236-.35303,3.09747-.80011,4.39746-1.32892.64819,2.34357.4693,4.20758-.52429,5.2016ZM37.68701,28.06158c-.54968-1.3208-1.27527-2.6795-2.16168-4.05902.87537-1.36584,1.6004-2.72815,2.15649-4.05725,2.12195,1.20074,3.31818,2.64771,3.31818,4.05469,0,1.45209-1.22211,2.87885-3.31299,4.06158Z"/><circle cx="24" cy="24" r="5"/><circle cx="36.72754" cy="11.27197" r="2"/><circle cx="11.27246" cy="36.72803" r="2"/></g></g></g>
+                                </svg>
+                                <div class="tech-icon-label">Molecular Design</div>
+                            </div>
+                            <div class="tech-icon-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                    <g><g id="Glyph"><g><path d="M14.11719,26.77344c0.45074,0.67767,1.51959,0.53296,1.78027-0.23242C17.78613,20.97363,22.36328,16.8252,28,15.48145c0,0,0,0.5166,0,0.51855c0,0.78662,0.90021,1.26691,1.55469,0.83203l6-4C35.83301,12.64648,36,12.33398,36,12s-0.16699-0.64648-0.44531-0.83203l-6-4c-0.30566-0.2041-0.70215-0.22363-1.02637-0.0498C28.20312,7.29199,28,7.63086,28,8v1.35352c-7.18066,1.25586-13.34473,5.84863-16.60547,12.42188c-0.15918,0.32031-0.13477,0.7002,0.0625,0.99805C11.45703,22.77344,14.10522,26.75537,14.11719,26.77344z"/><path d="M56.87042,28.53387C56.70544,28.22626,56.38885,28,56,28h-1.35352c-1.25586-7.18066-5.84863-13.34473-12.42188-16.60547c-0.32129-0.16113-0.7002-0.13477-0.99805,0.0625c0,0-3.9939,2.65613-4,2.66016c-0.68103,0.45288-0.5387,1.51764,0.23242,1.78027C43.02637,17.78613,47.1748,22.36328,48.51855,28H48c-0.36914,0-0.70801,0.20312-0.88184,0.52832s-0.15527,0.71973,0.0498,1.02637c0,0,3.99207,5.98804,4,5.99994c0.39093,0.58643,1.27441,0.58447,1.66406,0.00006c0,0,3.98975-5.98462,4-6C57.04877,29.22955,57.03522,28.84113,56.87042,28.53387z"/><path d="M49.88281,37.22656c-0.4527-0.68066-1.51733-0.53967-1.78027,0.23242C46.21387,43.02637,41.63672,47.1748,36,48.51855c0,0,0-0.5163,0-0.51855c0-0.77795-0.90851-1.26147-1.55469-0.83203l-6,4C28.16699,51.35352,28,51.66602,28,52s0.16699,0.64648,0.44531,0.83203l6,4C35.0932,57.26392,36,56.77985,36,56v-1.35352c7.18066-1.25586,13.34473-5.84863,16.60547-12.42188c0.15918-0.32031,0.13477-0.7002-0.0625-0.99805C52.54297,41.22656,49.89246,37.24109,49.88281,37.22656z"/><path d="M26.54102,48.10254C20.97363,46.21387,16.8252,41.63672,15.48145,36c0,0,0.51764,0,0.51855,0c0.78406,0,1.26984-0.90009,0.83203-1.55469l-4-6c-0.37109-0.55664-1.29297-0.55664-1.66406,0c0,0-3.99341,5.99011-4,6C6.73151,35.09998,7.21613,36,8,36h1.35352c1.25586,7.18066,5.84863,13.34473,12.42194,16.60547c0.32031,0.16016,0.70105,0.13373,0.99799-0.0625c0,0,3.98718-2.65167,3.99994-2.66016C27.45435,49.42993,27.31018,48.36444,26.54102,48.10254z"/><path d="M32.66406,19.25293c-0.3584-0.32031-0.89551-0.33984-1.27832-0.04199S22,26.60742,22,35c0,5.51367,4.48633,10,10,10s10-4.48633,10-10C42,27.63574,33.0459,19.5918,32.66406,19.25293z M32,41c-3.30859,0-6-2.69141-6-6c0-0.55273,0.44727-1,1-1s1,0.44727,1,1c0,2.20605,1.79395,4,4,4c0.55273,0,1,0.44727,1,1S32.55273,41,32,41z"/></g></g></g>
+                                </svg>
+                                <div class="tech-icon-label">Continuous Process</div>
+                            </div>
+                            <div class="tech-icon-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                    <g><g id="Glyph"><g><path d="M10.70593,24.09814c.68652-.39746,1.50732-.39844,2.1958,0,.6875.39697,1.09814,1.10791,1.09814,1.90186,0,.55225.44775,1,1,1h4c.55225,0,1-.44775,1-1,0-.79395.41064-1.50488,1.09814-1.90186.6875-.39746,1.50879-.39746,2.19629,0,.47852.27539,1.08936.11133,1.36621-.36621l2-3.46387c.27588-.47803.1123-1.08984-.36621-1.36621-.6875-.39697-1.09814-1.10791-1.09814-1.90186s.41064-1.50488,1.09814-1.90186c.47852-.27637.64209-.88818.36621-1.36621l-2-3.46387c-.27686-.47852-.8877-.64355-1.36621-.36621-.6875.39697-1.50879.39697-2.19629,0s-1.09814-1.10791-1.09814-1.90186c0-.55225-.44775-1-1-1h-4c-.55225,0-1,.44775-1,1,0,.79395-.41064,1.50488-1.09814,1.90186-.68848.39697-1.50928.39697-2.1958,0-.47949-.27734-1.09033-.1123-1.36621.36621l-2,3.46387c-.27588.47803-.1123,1.08984.36621,1.36621.6875.39697,1.09814,1.10791,1.09814,1.90186s-.41064,1.50488-1.09814,1.90186c-.47852.27637-.64209.88818-.36621,1.36621l2,3.46387c.27588.47754.88672.6416,1.36621.36621ZM16.99987,13c2.20557,0,4,1.79443,4,4s-1.79443,4-4,4-4-1.79443-4-4,1.79443-4,4-4Z"/><circle cx="16.99987" cy="17" r="2"/><rect x="8.79431" y="43" width="8" height="14" rx="1" ry="1"/><rect x="18.79431" y="37" width="8" height="20" rx="1" ry="1"/><rect x="28.79431" y="31" width="8" height="26" rx="1" ry="1"/><rect x="38.79431" y="27" width="8" height="30" rx="1" ry="1"/><rect x="48.79431" y="21" width="8" height="36" rx="1" ry="1"/><path d="M29.79431,9h12c.55225,0,1-.44775,1-1s-.44775-1-1-1h-12c-.55225,0-1,.44775-1,1s.44775,1,1,1Z"/><path d="M29.79431,13h12c.55225,0,1-.44775,1-1s-.44775-1-1-1h-12c-.55225,0-1,.44775-1,1s.44775,1,1,1Z"/><circle cx="45.79431" cy="8" r="1"/><circle cx="45.79431" cy="12" r="1"/><path d="M39.79431,19c0,.07684.01703.14899.02271.22443l-4.8551,2.7124c-.54681-.57428-1.31384-.93683-2.1676-.93683-1.6543,0-3,1.3457-3,3,0,.26086.04395.50952.10681.75098l-5.34918,4.82922c-.49518-.36078-1.09937-.5802-1.75763-.5802-1.6543,0-3,1.3457-3,3,0,.20563.02106.40637.06067.60046l-5.16547,3.09332c-.51831-.42676-1.17291-.69379-1.8952-.69379-1.6543,0-3,1.3457-3,3s1.3457,3,3,3,3-1.3457,3-3c0-.20563-.02106-.40637-.06067-.60046l5.16547-3.09332c.51831.42676,1.17291.69379,1.8952.69379,1.6543,0,3-1.3457,3-3,0-.26086-.04395-.50958-.10681-.75104l5.34918-4.82916c.49518.36078,1.09937.5802,1.75763.5802,1.6543,0,3-1.3457,3-3,0-.07684-.01703-.14899-.02271-.22443l4.8551-2.7124c.54681.57428,1.31384.93683,2.1676.93683,1.6543,0,3-1.3457,3-3,0-.16736-.02289-.32874-.04938-.48871l5.07703-2.26874c.52875.46558,1.21411.75745,1.97235.75745,1.6543,0,3-1.3457,3-3s-1.3457-3-3-3-3,1.3457-3,3c0,.16736.02289.32874.04938.48871l-5.07703,2.26874c-.52875-.46558-1.21411-.75745-1.97235-.75745-1.6543,0-3,1.3457-3,3Z"/></g></g></g>
+                                </svg>
+                                <div class="tech-icon-label">Real-time Analytics</div>
+                            </div>
+                            <div class="tech-icon-item">
+                                <svg id="Glyph" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                    <path d="M41.86621,22.13428c-.37695.38965-1.06055.38965-1.4375,0l-1.73975-1.79834-1.29785,1.3418,3.75635,3.88379,9.46143-9.78174-1.29785-1.34131-7.44482,7.6958Z"/><path d="M44,7c-7.16797,0-13,5.83154-13,13s5.83203,13,13,13,13-5.83154,13-13-5.83203-13-13-13ZM52.71875,16.4751s-10.83881,11.20599-10.85254,11.22021c-.39178.40503-1.04712.4035-1.4375,0l-5.14746-5.32227c-.375-.3877-.375-1.00293,0-1.39062l2.68896-2.77979c.37695-.38965,1.06055-.38965,1.4375,0l1.73975,1.79834,7.44482-7.69629c.37695-.38965,1.06055-.38965,1.4375,0l2.68896,2.77979c.375.3877.375,1.00293,0,1.39062Z"/><polygon points="19 45.7207 7 41.72095 7 43.61267 19 47.61279 19 45.7207"/><polygon points="37 47.61279 49 43.61267 49 41.72095 37 45.7207 37 47.61279"/><path d="M29.01001,20.29999l-.67999-.23999c-.21002-.08002-.45001-.08002-.66003,0l-19.66455,6.88257,19.99457,6.99786,6.55707-2.29486c-3.31592-2.69434-5.46271-6.77319-5.54706-11.34558Z"/><path d="M7,35.61261l13.31641,4.43866c.52344.1748.80664.74115.63184,1.26508-.16608.49786-.73975.80731-1.26465.63239l-12.68359-4.22772v1.8916l13.31641,4.43866c.4082.13623.68359.51807.68359.94873v3.99988c0,.67041-.68701,1.15668-1.31641.94885l-12.68359-4.22772v3.27899c0,.41998.27002.79999.66998.94l19.33002,7.06v-21.29065l-20-6.99988v6.90314Z"/><path d="M36.62225,33.04163l-7.62225,2.66772v21.29065l19.33002-7.06c.39996-.14001.66998-.52002.66998-.94v-3.27899s-12.68359,4.22772-12.68365,4.22772c-.63953.21112-1.31635-.27155-1.31635-.94873v-4c0-.43066.27539-.8125.68359-.94873l13.31641-4.43866v-1.8916s-12.63641,4.21198-12.68347,4.22766c-.49579.16528-1.08893-.10474-1.26477-.63226-.1748-.52393.1084-1.09033.63184-1.26514l13.31641-4.43866v-1.4726c-1.56.56-3.23999.85999-5,.85999-2.68256,0-5.19629-.71912-7.37775-1.95837Z"/>
+                                </svg>
+                                <div class="tech-icon-label">Quality Assurance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaboration Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Innovation Partnership</h2>
+                <p class="section-subtitle">Collaborative approach to solving industry challenges</p>
+                
+                <div class="collaboration-grid">
+                    <div class="collaboration-card">
+                        <span class="collaboration-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                <g><g id="Glyph"><g><circle cx="16.8834" cy="50" r="1"/><circle cx="22.8834" cy="44" r="1"/><path d="M12.26523,43h7.80243c.41412-1.1615,1.51379-2,2.81573-2s2.40161.8385,2.81573,2h7.80243l-3.61816-7.23633v-14.76367h1c.55273,0,1-.44727,1-1s-.44727-1-1-1H14.8834c-.55273,0-1,.44727-1,1s.44727,1,1,1h1v14.76367l-3.61816,7.23633Z"/><path d="M34.50156,45h-8.80243c-.41412,1.1615-1.51379,2-2.81573,2s-2.40155-.8385-2.81567-2h-8.80249l-3.8291,7.6582c-.46875.93652-.41895,2.02832.13086,2.91895.55078.89062,1.50488,1.42285,2.55273,1.42285h25.52734c1.04785,0,2.00195-.53223,2.55273-1.42285.5498-.89062.59961-1.98242.13086-2.91895l-3.8291-7.6582ZM16.8834,53c-1.6543,0-3-1.3457-3-3s1.3457-3,3-3,3,1.3457,3,3-1.3457,3-3,3ZM23.8834,53c-.55231,0-1-.44775-1-1,0-.55231.44769-1,1-1s1,.44769,1,1c0,.55225-.44769,1-1,1ZM26.8834,50c-.55231,0-1-.44775-1-1,0-.55231.44769-1,1-1s1,.44769,1,1c0,.55225-.44769,1-1,1Z"/><path d="M36.8834,21c.61407,0,1.18469-.18677,1.66071-.50458l3.48895,2.61597c-.08844.28259-.14966.57721-.14966.88861,0,1.6543,1.3457,3,3,3s3-1.3457,3-3-1.3457-3-3-3c-.61407,0-1.18469.18677-1.66071.50458l-3.48889-2.61597c.0885-.28265.1496-.57721.1496-.88861,0-.70441-.25409-1.34424-.66199-1.85669l2.01526-3.21765c.20886.04614.42419.07434.64673.07434,1.6543,0,3-1.3457,3-3s-1.3457-3-3-3-3,1.3457-3,3c0,.70441.25409,1.34424.66199,1.85669l-2.01526,3.21765c-.20886-.04614-.42419-.07434-.64673-.07434-1.6543,0-3,1.3457-3,3s1.3457,3,3,3Z"/><path d="M54.8834,41v-1.5c0-.34003-.17999-.67004-.46997-.85004l-2.64001-1.64996-4.89001,3.04999v6.25l2.46997,1.54999c.16003.10004.35004.15002.53003.15002s.37-.04999.53003-.15002l1.10999-.69c-.41003-.63-.64001-1.37-.64001-2.15997,0-2.21002,1.78998-4,4-4Z"/><path d="M50.8834,32.5c0-.34473-.17773-.66504-.46973-.84766l-4-2.5c-.32422-.20312-.73633-.20312-1.06055,0l-4,2.5c-.29199.18262-.46973.50293-.46973.84766v2.69592l5,3.125,5-3.125v-2.69592Z"/><path d="M37.35312,38.65234c-.29199.18262-.46973.50293-.46973.84766v5c0,.34473.17773.66504.46973.84766l4,2.5c.16211.10156.34668.15234.53027.15234s.36816-.05078.53027-.15234l2.46973-1.54358v-6.25l-4.88654-3.05408-2.64374,1.65234Z"/><circle cx="54.8834" cy="45" r="2"/></g></g></g>
+                            </svg>
+                        </span>
+                        <h3 class="collaboration-title">Research Institutions</h3>
+                        <p class="collaboration-description">Strategic partnerships with leading universities and research centres to access cutting-edge polymer science and analytical capabilities.</p>
+                    </div>
+                    
+                    <div class="collaboration-card">
+                        <span class="collaboration-icon">
+                            <svg id="Glyph" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                <path d="M31,19.00034h-4c-.51001,0-.94.39001-1,.89996l-.59003,6.01001,6.99005-2-.40002-4.01001c-.06-.50995-.48999-.89996-1-.89996Z"/><path d="M29.73779,15.71274l.36767.73486c.56266,1.12458,2.37941.285,1.78906-.89453l-.36768-.73438c-.18555-.37158-.11279-.81787.18018-1.11133.90283-.90234,1.12598-2.27637.55518-3.41943l-.36768-.73486c-.24805-.49463-.84814-.69482-1.3418-.44727-.49414.24756-.69434.84814-.44727,1.3418l.36768.73438c.18555.37158.11279.81787-.18018,1.11133-.90283.90234-1.12598,2.27637-.55518,3.41943Z"/><path d="M25.3125,15.71274l.36767.73486c.57038,1.14001,2.37363.27345,1.78907-.89452l-.36768-.73438c-.18555-.37158-.11279-.81787.18018-1.11133.90283-.90234,1.12598-2.27637.55518-3.41943l-.36768-.73486c-.24707-.49463-.84863-.69482-1.3418-.44727-.49414.24756-.69434.84814-.44727,1.3418l.36768.73438c.18555.37158.11279.81787-.18018,1.11133-.90283.90234-1.12598,2.27637-.55518,3.41943Z"/><rect x="42" y="29.00034" width="2" height="2"/><rect x="14" y="47.00034" width="16" height="8"/><rect x="42" y="37.00034" width="2" height="2"/><rect x="44" y="45.00034" width="6" height="10"/><rect x="29" y="35.00034" width="2" height="2"/><rect x="14" y="43.00034" width="16" height="2"/><rect x="21" y="35.00034" width="2" height="2"/><path d="M14,32.00034v3.24561l-6.2749,1.79297c-.4292.12256-.7251.51514-.7251.96143v16c0,.55225.44775,1,1,1h4v-13c0-.55225.44775-1,1-1h18c.55225,0,1,.44775,1,1v13h3v-29.75427l-20.2749,5.79285c-.4292.12256-.7251.51514-.7251.96143ZM27,34.00034c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1,1v4c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4ZM19,34.00034c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1,1v4c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4Z"/><rect x="50" y="29.00034" width="2" height="2"/><rect x="42" y="21.00034" width="10" height="2"/><path d="M56,15.00034h-19v40h5v-11c0-.55225.44775-1,1-1h8c.55225,0,1,.44775,1,1v11h4c.55225,0,1-.44775,1-1V16.00034c0-.55225-.44775-1-1-1ZM46,40.00034c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1,1v4ZM46,32.00034c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1,1v4ZM54,40.00034c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1,1v4ZM54,32.00034c0,.55225-.44775,1-1,1h-4c-.55225,0-1-.44775-1-1v-4c0-.55225.44775-1,1-1h4c.55225,0,1,.44775,1=1v4ZM54,24.00034c0,.55225-.44775,1-1,1h-12c-.55225,0-1-.44775-1-1v-4c0-.55225.44775-1,1-1h12c.55225,0,1,.44775,1,1v4Z"/><rect x="50" y="37.00034" width="2" height="2"/><path d="M54,12.00034c0-.54999-.45001-1-1-1h-6c-.54999,0-1,.45001-1,1v1h8v-1Z"/>
+                            </svg>
+                        </span>
+                        <h3 class="collaboration-title">Industry Operators</h3>
+                        <p class="collaboration-description">Direct collaboration with end-users ensures our solutions address real-world challenges and meet the specific requirements of field applications.</p>
+                    </div>
+                    
+                    <div class="collaboration-card">
+                        <span class="collaboration-icon">
+                            <svg id="Glyph" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" width="48" height="48" fill="#ff6b35">
+                                <path d="M32,20.99982c4.0293,0,7.30664-3.27734,7.30664-7.30615,0-2.80908-1.63965-5.39893-4.17578-6.59814-.31055-.14551-.67285-.12354-.96289.05957-.28906.18311-.46484.50195-.46484.84473v5.15869l-1.70312,1.13525-1.70312-1.13525v-5.15869c0-.34277-.17578-.66162-.46484-.84473-.29102-.18311-.65234-.20508-.96289-.05957-2.53613,1.19922-4.17578,3.78906-4.17578,6.59814,0,3.97627,3.29205,7.30616,7.30664,7.30616Z"/><path d="M32,28.99982c-3.90024,0-7.30664,3.37843-7.30664,7.30615,0,2.80908,1.63965,5.39893,4.17578,6.59814.31055.146.67188.12354.96289-.05957.28906-.18311.46484-.50195.46484-.84473v-5.15869l1.70312-1.13525,1.70312,1.13525v5.15869c0,.34264.17565.66137.46451.84451.25865.16398.65187.2065.96323.05978,2.53613-1.19922,4.17578-3.78906,4.17578-6.59814,0-4.02879-3.27732-7.30613-7.30664-7.30615Z"/><path d="M27,21.54981v6.90002c1.44-.93005,3.15997-1.45001,5-1.45001s3.54999.52997,5,1.45996v-6.91998c-1.45001.92999-3.15997,1.46002-5,1.46002s-3.56-.52002-5-1.45001Z"/><path d="M52.60699,49.06183c.01031-.02039.01886-.04163.02911-.06201h-12.63611c-1.6543,0-3,1.3457-3,3v2c0,1.6543,1.3457,3,3,3h12c1.6543,0,3-1.3457,3-3v-2c0-1.44635-1.02881-2.65656-2.39301-2.93799Z"/><path d="M53.5,17.99982c-1.90747,0-3.5,1.5979-3.5,3.5v7.95508c.3927.13623.7749.3114,1.13965.53027,2.68457,1.61133,3.69043,5.06592,2.28906,7.86475,0,0-2.7381,5.4776-2.74512,5.49164-.24408.48828-.85522.69061-1.3418.44733-.49414-.24707-.69434-.84766-.44727-1.3418l2.74512-5.49219c.93652-1.87012.26465-4.17822-1.5293-5.25488-1.8587-1.11768-4.41345-.47192-5.52539,1.38135-.00018.00024-3.87207,6.45361-3.87207,6.45361-.4668.77734-.71289,1.66699-.71289,2.57275v4.89209h13.57428c2.23981-5.12378,3.42572-10.68457,3.42572-16.2998v-9.2002c0-1.92969-1.57025-3.5-3.5-3.5Z"/><path d="M24,48.99982h-12.63611c.01025.02039.0188.04163.02911.06201-1.3642.28143-2.39301,1.49164-2.39301,2.93799v2c0,1.6543,1.3457,3,3,3h12c1.6543,0,3-1.3457,3-3v-2c0-1.6543-1.3457-3-3-3Z"/><path d="M24,46.99982v-4.89209c0-.90576-.24609-1.79541-.71289-2.57275,0,0-3.87189-6.45337-3.87207-6.45361-1.11194-1.85327-3.66669-2.49902-5.52539-1.38135-1.79395,1.07666-2.46582,3.38477-1.5293,5.25488l2.74512,5.49219c.24707.49414.04688,1.09473-.44727,1.3418-.48657.24329-1.09772.04095-1.3418-.44733-.00702-.01404-2.74512-5.49164-2.74512-5.49164-1.40137-2.79883-.39551-6.25342,2.28906-7.86475.36475-.21887.74695-.39404,1.13965-.53027v-7.95508c0-1.9021-1.59253-3.5-3.5-3.5-1.92975,0-3.5,1.57031-3.5,3.5v9.2002c0,5.61523,1.18591,11.17603,3.42572,16.2998h13.57428Z"/>
+                            </svg>
+                        </span>
+                        <h3 class="collaboration-title">Application Specialists</h3>
+                        <p class="collaboration-description">Working closely with installation contractors to optimise processing parameters and ensure seamless integration with existing equipment and procedures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Partner in Innovation</h2>
+                <p>Join us in developing the next generation of subsea polymer solutions. Our collaborative approach ensures your specific challenges drive our innovation agenda.</p>
+                <div class="cta-buttons">
+                    <a href="contact-us.html" class="btn-white">Discuss R&D Partnership</a>
+                    <a href="contact-us.html" class="btn-outline-white">Technical Enquiry</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><strong>Rosehill Energy</strong><br>
+                    Beech Road<br>
+                    Sowerby Bridge<br>
+                    West Yorkshire<br>
+                    United Kingdom<br>
+                    HX6 2JT</p>
+                    <p>📞 +44 (0) 1422 839 610<br>
+                    📧 info@rosehillenergy.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html">Advanced Polymer Solutions</a></li>
+                        <li><a href="solutions.html#liquid-applied">Liquid-Applied Systems</a></li>
+                        <li><a href="solutions.html#subsea-infrastructure">Subsea Infrastructure</a></li>
+                        <li><a href="solutions.html#flexilon">Flexilon Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="innovation.html">Innovation & R&D</a></li>
+                        <li><a href="manufacturing.html">Manufacturing</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About Rosehill Energy</h3>
+                    <p>Pioneering polymer innovation for over two decades, formulating and manufacturing bespoke polymer systems engineered to perform in the toughest marine and onshore environments.</p>
+                    <p style="margin-top: 20px;">
+                        <strong>Certifications:</strong><br>
+                        ISO 9001:2008 • Advanced Polymer Chemistry • Continuous Reactor Technology
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Rosehill Energy. Part of Rosehill Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.research-card, .process-item, .collaboration-card, .tech-icon-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
