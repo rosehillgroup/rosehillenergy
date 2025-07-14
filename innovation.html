@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovation & R&D - Rosehill Energy</title>
+    <title>Innovation &amp; R&amp;D - Rosehill Energy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
@@ -180,13 +180,15 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95), rgba(45, 74, 113, 0.95)), 
-                        radial-gradient(circle at 70% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.85), rgba(45, 74, 113, 0.85)), url('Oil_Pipeline.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 120px 0 80px;
-            text-align: center;
+            padding: 140px 0 100px;
             position: relative;
             overflow: hidden;
+            margin-top: 70px;
         }
 
         .hero::before {
@@ -203,6 +205,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .hero h1 {
@@ -225,6 +228,16 @@
             max-width: 800px;
             margin: 0 auto 40px;
             opacity: 0.95;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                text-align: left;
+            }
+
+            .hero p {
+                margin: 0 0 40px 0;
+            }
         }
 
         /* Section Styles */
@@ -706,7 +719,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="innovation.html" class="active">Innovation & R&D</a></li>
+                    <li><a href="innovation.html" class="active">Innovation &amp; R&amp;D</a></li>
                     <li><a href="manufacturing.html">Manufacturing</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="contact-us.html" class="contact-btn">Contact Us</a></li>
@@ -719,7 +732,7 @@
                 <div class="mobile-nav-menu" id="mobile-menu">
                     <a href="index.html">Home</a>
                     <a href="solutions.html">Solutions</a>
-                    <a href="innovation.html" class="active">Innovation & R&D</a>
+                    <a href="innovation.html" class="active">Innovation &amp; R&amp;D</a>
                     <a href="manufacturing.html">Manufacturing</a>
                     <a href="about-us.html">About Us</a>
                     <a href="contact-us.html" class="contact-btn">Contact Us</a>
@@ -735,7 +748,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-subtitle">Pushing the Boundaries of Polymer Chemistry</div>
-                    <h1>Innovation & R&D</h1>
+                    <h1>Innovation &amp; R&amp;D</h1>
                     <p>Our research and development programme focuses on addressing key industry challenges through advanced material science, rigorous testing protocols, and strategic collaboration with leading institutions and operators.</p>
                 </div>
             </div>

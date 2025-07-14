@@ -180,13 +180,15 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95), rgba(45, 74, 113, 0.95)), 
-                        radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.85), rgba(45, 74, 113, 0.85)), url('Oil_Pipeline.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 120px 0 80px;
-            text-align: center;
+            padding: 140px 0 100px;
             position: relative;
             overflow: hidden;
+            margin-top: 70px;
         }
 
         .hero::before {
@@ -203,6 +205,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .hero h1 {
@@ -225,6 +228,16 @@
             max-width: 800px;
             margin: 0 auto 40px;
             opacity: 0.95;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                text-align: left;
+            }
+
+            .hero p {
+                margin: 0 0 40px 0;
+            }
         }
 
         /* Contact Section */
@@ -343,6 +356,12 @@
             display: block;
         }
 
+        .info-icon img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(346deg) brightness(97%) contrast(97%);
+        }
+
         .info-title {
             font-family: 'Overpass', sans-serif;
             color: #1a365d;
@@ -417,6 +436,12 @@
             color: #ff6b35;
             margin-bottom: 20px;
             display: block;
+        }
+
+        .quick-icon img {
+            width: 48px;
+            height: 48px;
+            filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(346deg) brightness(97%) contrast(97%);
         }
 
         .quick-title {
@@ -777,7 +802,7 @@
                     <!-- Contact Information -->
                     <div class="contact-info">
                         <div class="info-card">
-                            <span class="info-icon">📞</span>
+                            <span class="info-icon"><img src="phone, call, telephone, handset, communication, contact, mobile, device.svg" alt="Contact Us"></span>
                             <h3 class="info-title">Contact Us</h3>
                             <div class="info-details">
                                 <p style="margin-bottom: 25px;">Email:<br>
@@ -806,21 +831,21 @@
                 
                 <div class="quick-contact-grid">
                     <div class="quick-card">
-                        <span class="quick-icon">⚡</span>
+                        <span class="quick-icon"><img src="emergency, call, phone, contact, urgent, help, 911, alert.svg" alt="Urgent Technical Support"></span>
                         <h3 class="quick-title">Urgent Technical Support</h3>
                         <p class="quick-description">Need immediate technical assistance? Our experts are available for urgent project support.</p>
                         <a href="tel:+441234567892" class="quick-btn">Call Now</a>
                     </div>
                     
                     <div class="quick-card">
-                        <span class="quick-icon">📋</span>
+                        <span class="quick-icon"><img src="data analytics, smart manufacturing, industry 4.0, insights, technology.svg" alt="Request Data Sheets"></span>
                         <h3 class="quick-title">Request Data Sheets</h3>
                         <p class="quick-description">Download comprehensive technical data sheets and product specifications instantly.</p>
                         <a href="mailto:technical@rosehillenergy.com?subject=Technical Data Sheet Request" class="quick-btn">Download Resources</a>
                     </div>
                     
                     <div class="quick-card">
-                        <span class="quick-icon">💬</span>
+                        <span class="quick-icon"><img src="chat, bubble, message, talk, communication, conversation, text, speech.svg" alt="Schedule Consultation"></span>
                         <h3 class="quick-title">Schedule Consultation</h3>
                         <p class="quick-description">Book a detailed technical consultation with our polymer specialists.</p>
                         <a href="mailto:technical@rosehillenergy.com?subject=Technical Consultation Request" class="quick-btn">Book Meeting</a>
