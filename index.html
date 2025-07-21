@@ -351,14 +351,14 @@
             position: relative;
             overflow: hidden;
         }
-
-        .solution-visual.liquid-applied {
-            background: linear-gradient(135deg, #4a90e2, #357abd);
+        
+        .solution-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
         }
 
-        .solution-visual.subsea-infrastructure {
-            background: linear-gradient(135deg, #1a365d, #2d4a71);
-        }
 
         .solution-placeholder {
             font-size: 6rem;
@@ -756,6 +756,13 @@
             .solution-visual {
                 height: 300px;
             }
+            
+            .solution-visual img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+            }
 
             .benefits-grid {
                 grid-template-columns: 1fr;
@@ -854,7 +861,7 @@
                         <picture>
         <source srcset="liquid-applied-solutions.avif" type="image/avif">
         <source srcset="liquid-applied-solutions.webp" type="image/webp">
-        <img src="liquid-applied-solutions.jpg" alt="Liquid Applied Solutions" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+        <img src="liquid-applied-solutions.jpg" alt="Liquid Applied Solutions">
     </picture>
                     </div>
                 </div>
@@ -878,7 +885,7 @@
                         <picture>
         <source srcset="rosehill_onpipe.avif" type="image/avif">
         <source srcset="rosehill_onpipe.webp" type="image/webp">
-        <img src="rosehill_onpipe.jpg" alt="On-Pipe Subsea Infrastructure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+        <img src="rosehill_onpipe.jpg" alt="On-Pipe Subsea Infrastructure">
     </picture>
                     </div>
                 </div>
