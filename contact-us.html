@@ -11,6 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-59VR3LBC');</script>
+    <!-- End Google Tag Manager -->
     <style>
         * {
             margin: 0;
@@ -684,6 +692,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59VR3LBC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -981,6 +993,41 @@
             });
         });
 
+        // Track contact interactions
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (!target) return;
+            
+            const href = target.getAttribute('href');
+            if (!href) return;
+            
+            // Track phone clicks
+            if (href.startsWith('tel:')) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'click',
+                    'click_type': 'phone_number',
+                    'business_area': 'energy',
+                    'click_text': target.textContent.trim(),
+                    'click_url': href,
+                    'page_location': window.location.href
+                });
+            }
+            
+            // Track email clicks
+            if (href.startsWith('mailto:')) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'click',
+                    'click_type': 'email_address',
+                    'business_area': 'energy',
+                    'click_text': target.textContent.trim(),
+                    'click_url': href,
+                    'page_location': window.location.href
+                });
+            }
+        });
+
         // Form submission handling
         const contactForm = document.getElementById('contact-form');
         contactForm.addEventListener('submit', function(e) {
@@ -992,6 +1039,21 @@
             for (let [key, value] of formData.entries()) {
                 data[key] = value;
             }
+            
+            // Track form submission in GTM
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'form_submission',
+                'form_name': 'energy_contact_form',
+                'form_type': 'technical_enquiry',
+                'business_area': 'energy',
+                'enquiry_type': data.enquiryType || 'not_specified',
+                'company': data.company || 'not_provided',
+                'industry': data.industry || 'not_specified',
+                'application': data.application || 'not_specified',
+                'page_location': window.location.href,
+                'page_title': document.title
+            });
             
             // Show success message (in real implementation, this would send to server)
             alert('Thank you for your enquiry! We will respond within 24 hours for technical enquiries.');
