@@ -367,6 +367,15 @@
             object-fit: cover;
             border-radius: 15px;
         }
+        
+        /* Desktop: hide mobile images, show desktop images */
+        .mobile-image-container {
+            display: none;
+        }
+        
+        .desktop-image {
+            display: flex;
+        }
 
 
         .solution-placeholder {
@@ -590,6 +599,15 @@
 
         .footer-section a:hover {
             color: #ff6b35;
+        }
+        
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            filter: brightness(0) saturate(100%) invert(100%);
         }
 
         .footer-bottom {
@@ -883,11 +901,17 @@
 
         .mobile-nav-menu .contact-btn {
             background: #ff6b35;
-            padding: 15px 20px;
-            border-radius: 8px;
+            color: white;
             text-align: center;
-            margin-top: 10px;
+            border-radius: 8px;
+            margin: 10px 20px;
+            padding: 12px 24px;
             border-bottom: none;
+        }
+        
+        .mobile-nav-menu .contact-btn:hover {
+            background: #e55a2b;
+            color: white;
         }
 
         /* Responsive */
@@ -983,6 +1007,15 @@
                 object-fit: cover;
                 border-radius: 15px;
             }
+            
+            .mobile-image-container {
+                display: block;
+                margin: 20px 0;
+            }
+            
+            .desktop-image {
+                display: none;
+            }
 
             .benefits-grid {
                 grid-template-columns: 1fr;
@@ -1072,6 +1105,15 @@
                 <div class="solutions-inner">
                     <div class="solution-content">
                         <h3>Liquid-Applied Solutions</h3>
+                        <div class="mobile-image-container">
+                            <div class="solution-visual liquid-applied">
+                                <picture>
+        <source srcset="liquid-applied-solutions.avif" type="image/avif">
+        <source srcset="liquid-applied-solutions.webp" type="image/webp">
+        <img src="liquid-applied-solutions.jpg" alt="Liquid Applied Solutions">
+    </picture>
+                            </div>
+                        </div>
                         <p>Advanced polyurethanes for cable protection, static bend stiffeners, thermal insulation, and custom mouldings engineered for marine environments. Our liquid-applied systems provide seamless protection with excellent adhesion and long-term durability.</p>
                         <ul class="solution-features">
                             <li>Seamless application for complex geometries</li>
@@ -1081,7 +1123,7 @@
                         </ul>
                         <a href="solutions.html" class="btn-primary">Learn More</a>
                     </div>
-                    <div class="solution-visual liquid-applied">
+                    <div class="solution-visual liquid-applied desktop-image">
                         <picture>
         <source srcset="liquid-applied-solutions.avif" type="image/avif">
         <source srcset="liquid-applied-solutions.webp" type="image/webp">
@@ -1096,6 +1138,15 @@
                 <div class="solutions-inner">
                     <div class="solution-content">
                         <h3>On-Pipe Subsea Infrastructure</h3>
+                        <div class="mobile-image-container">
+                            <div class="solution-visual subsea-infrastructure">
+                                <picture>
+        <source srcset="rosehill_onpipe.avif" type="image/avif">
+        <source srcset="rosehill_onpipe.webp" type="image/webp">
+        <img src="rosehill_onpipe.jpg" alt="On-Pipe Subsea Infrastructure">
+    </picture>
+                            </div>
+                        </div>
                         <p>Flexilon product range offering proven performance from 90°C to 140°C wet conditions with low-pressure, safe alternatives to injection moulded products. Designed for demanding subsea applications with reliable long-term performance.</p>
                         <ul class="solution-features">
                             <li>High-temperature performance to 140°C</li>
@@ -1105,7 +1156,7 @@
                         </ul>
                         <a href="solutions.html" class="btn-primary">Learn More</a>
                     </div>
-                    <div class="solution-visual subsea-infrastructure">
+                    <div class="solution-visual subsea-infrastructure desktop-image">
                         <picture>
         <source srcset="rosehill_onpipe.avif" type="image/avif">
         <source srcset="rosehill_onpipe.webp" type="image/webp">
@@ -1272,8 +1323,8 @@
                     West Yorkshire<br>
                     United Kingdom<br>
                     HX6 2JT</p>
-                    <p>📞 +44 (0) 1422 839 610<br>
-                    📧 info@rosehillenergy.com</p>
+                    <p><img src="phone.svg" alt="Phone" class="contact-icon" width="16" height="16"> <a href="tel:+441422839610" style="color: white; text-decoration: none;">+44 (0) 1422 839 610</a><br>
+                    <img src="email.svg" alt="Email" class="contact-icon" width="16" height="16"> <a href="mailto:info@rosehillenergy.com" style="color: white; text-decoration: none;">info@rosehillenergy.com</a></p>
                 </div>
                 
                 <div class="footer-section">
