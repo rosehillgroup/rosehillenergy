@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Rosehill Energy</title>
     <meta name="description" content="Leading UK specialists in advanced polymer solutions for energy infrastructure. Over 35 years of polymer chemistry expertise serving oil, gas, and renewable energy sectors worldwide.">
+    <meta name="keywords" content="about Rosehill Energy, UK polymer specialists, 35 years polymer chemistry expertise, energy infrastructure solutions, oil gas renewable energy, advanced polymer solutions, energy sector expertise, polymer chemistry innovation, UK energy specialists, Sowerby Bridge energy company">
     <link rel="canonical" href="https://energy.rosehill.group/about-us.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - Rosehill Energy">
+    <meta property="og:description" content="Leading UK specialists in advanced polymer solutions for energy infrastructure. Over 35 years of polymer chemistry expertise serving oil, gas, and renewable energy sectors worldwide.">
+    <meta property="og:image" content="https://energy.rosehill.group/rosehill_energy_social_sharing.jpg">
+    <meta property="og:url" content="https://energy.rosehill.group/about-us.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rosehill Energy">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Rosehill Energy">
+    <meta name="twitter:description" content="Leading UK specialists in advanced polymer solutions for energy infrastructure. Over 35 years of polymer chemistry expertise serving oil, gas, and renewable energy sectors worldwide.">
+    <meta name="twitter:image" content="https://energy.rosehill.group/rosehill_energy_social_sharing.jpg">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -698,11 +713,17 @@
         .contact-icon {
             width: 16px;
             height: 16px;
-            display: inline-block;
-            vertical-align: middle;
             margin-right: 8px;
             filter: brightness(0) saturate(100%) invert(100%);
+            flex-shrink: 0;
         }
+
+        .contact-line {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
 
         .footer-section ul {
             list-style: none;
@@ -1121,8 +1142,8 @@
                     West Yorkshire<br>
                     United Kingdom<br>
                     HX6 2JT</p>
-                    <p><img src="phone.svg" alt="Phone" class="contact-icon" width="16" height="16"> <a href="tel:+441422839610" style="color: white; text-decoration: none;">+44 (0) 1422 839 610</a><br>
-                    <img src="email.svg" alt="Email" class="contact-icon" width="16" height="16"> <a href="mailto:info@rosehillenergy.com" style="color: white; text-decoration: none;">info@rosehillenergy.com</a></p>
+                    <p><span class="contact-line"><img src="phone.svg" alt="Phone" class="contact-icon" width="16" height="16"><a href="tel:+441422839610" style="color: white; text-decoration: none;">+44 (0) 1422 839 610</a></span><br>
+                    <span class="contact-line"><img src="email.svg" alt="Email" class="contact-icon" width="16" height="16"><a href="mailto:info@rosehillenergy.com" style="color: white; text-decoration: none;">info@rosehillenergy.com</a></span></p>
                 </div>
                 
                 <div class="footer-section">
