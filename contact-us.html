@@ -1091,7 +1091,11 @@
         // Form submission handling
         const contactForm = document.getElementById('contact-form');
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Check form validity using HTML5 validation
+            if (!contactForm.checkValidity()) {
+                e.preventDefault();
+                return;
+            }
             
             // Get form data
             const formData = new FormData(contactForm);
@@ -1107,7 +1111,7 @@
                 'form_name': 'energy_contact_form',
                 'form_type': 'technical_enquiry',
                 'business_area': 'energy',
-                'enquiry_type': data.enquiryType || 'not_specified',
+                'enquiry_type': data['enquiry-type'] || 'not_specified',
                 'company': data.company || 'not_provided',
                 'industry': data.industry || 'not_specified',
                 'application': data.application || 'not_specified',
@@ -1115,11 +1119,14 @@
                 'page_title': document.title
             });
             
-            // Show success message (in real implementation, this would send to server)
-            alert('Thank you for your enquiry! We will respond within 24 hours for technical enquiries.');
+            // Track successful form completion
+            window.dataLayer.push({
+                'event': 'conversion',
+                'conversion_type': 'energy_contact_form_completed',
+                'value': 1
+            });
             
-            // Reset form
-            contactForm.reset();
+            // Allow form to submit to Netlify naturally
         });
 
         // Form validation
