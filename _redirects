@@ -17,15 +17,26 @@ http://www.rosehilloffshore.com/* https://energy.rosehill.group/:splat 301!
 http://energy.rosehill.group/* https://energy.rosehill.group/:splat 301!
 http://rosehillenergy.netlify.app/* https://rosehillenergy.netlify.app/:splat 301!
 
-# Clean URLs - redirect to canonical .html version
-/home /index.html 301!
-/about /about-us.html 301!
-/about-us /about-us.html 301!
-/solutions /solutions.html 301!
-/contact /contact-us.html 301!
-/contact-us /contact-us.html 301!
-/innovation /innovation.html 301!
-/manufacturing /manufacturing.html 301!
+# Clean URLs - remove .html extension (redirect .html to clean)
+/about-us.html /about-us 301
+/solutions.html /solutions 301
+/contact-us.html /contact-us 301
+/innovation.html /innovation 301
+/manufacturing.html /manufacturing 301
+/thank-you.html /thank-you 301
+
+# Serve HTML files without extension
+/about-us /about-us.html 200
+/solutions /solutions.html 200
+/contact-us /contact-us.html 200
+/innovation /innovation.html 200
+/manufacturing /manufacturing.html 200
+/thank-you /thank-you.html 200
+
+# Legacy clean URL redirects (for backwards compatibility)
+/home /index.html 301
+/about /about-us 301
+/contact /contact-us 301
 
 # Fallback for 404 errors
-/* /index.html 404
+/* /404.html 404
